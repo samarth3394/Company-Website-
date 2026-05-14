@@ -16,7 +16,7 @@ This repository contains the source code for the Bharti Nexus official landing p
 
 ## 📁 Project Structure
 
-- `bharti-nexus.html` - The core HTML file containing all markup, inline CSS styling, and JavaScript logic.
+- `index.html` - The core HTML file containing all markup, inline CSS styling, and JavaScript logic.
 - `logo2.png` - Primary company logo.
 - `founder.png`, `cofounder.png`, `rohan.png` - Leadership profile images.
 
@@ -38,7 +38,7 @@ Since this is a static website, no complex backend setup is required.
    ```bash
    cd Company-Website-
    ```
-3. Open `bharti-nexus.html` directly in any modern web browser (Chrome, Firefox, Safari, Edge).
+3. Open `index.html` directly in any modern web browser (Chrome, Firefox, Safari, Edge).
    - *Alternatively, use a tool like VS Code "Live Server" extension for a better development experience.*
 
 ## 👥 Leadership Team
