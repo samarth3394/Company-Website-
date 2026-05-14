@@ -1481,7 +1481,7 @@
 
     .leader-photo-wrap {
       width: 100%;
-      height: 300px;
+      height: 340px;
       overflow: hidden;
       position: relative;
       background: var(--grad-soft);
@@ -1491,7 +1491,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center;
+      object-position: center 20%;
       transition: transform 0.5s;
     }
 
@@ -1827,7 +1827,267 @@
       }
 
       .leader-photo-wrap {
-        height: 180px;
+        height: 320px;
+      }
+
+      .leader-photo-wrap img {
+        object-position: center 15%;
+      }
+
+      /* Hide custom cursor on touch/mobile devices */
+      #cursor,
+      #cursor-ring {
+        display: none !important;
+      }
+
+      body {
+        cursor: auto;
+      }
+
+      a, button, .product-card, .feat-card, .testi-card, .ai-card,
+      .career-card, .dark-toggle, .social-link, .trust-logo,
+      .btn-hero, .btn-primary, .btn-white, .btn-ghost, .hamburger,
+      .leader-card, .leader-social a {
+        cursor: pointer;
+      }
+
+      /* Better mobile nav */
+      .nav-logo {
+        font-size: 1.1rem;
+      }
+
+      .nav-logo img {
+        height: 40px;
+      }
+
+      nav {
+        padding: 12px 4%;
+      }
+
+      .btn-white {
+        font-size: 0.78rem;
+        padding: 8px 16px;
+      }
+
+      /* Hero mobile fixes */
+      #hero {
+        padding-top: 100px;
+        min-height: auto;
+      }
+
+      .hero-sub {
+        font-size: 0.95rem;
+      }
+
+      .hero-btns {
+        justify-content: center;
+      }
+
+      .btn-hero {
+        font-size: 0.9rem;
+        padding: 12px 22px;
+      }
+
+      /* Dashboard mobile */
+      .dashboard-main {
+        transform: none;
+        animation: none;
+        padding: 18px;
+      }
+
+      .dash-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+      }
+
+      .dash-stat-val {
+        font-size: 1.1rem;
+      }
+
+      .dash-stat-label {
+        font-size: 0.65rem;
+      }
+
+      .dash-row {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      /* Trust section mobile */
+      .trust-logos {
+        gap: 12px;
+      }
+
+      .trust-logo {
+        font-size: 0.78rem;
+        padding: 8px 12px;
+      }
+
+      /* Careers banner mobile */
+      .careers-banner {
+        padding: 36px 20px;
+      }
+
+      /* Section padding mobile */
+      section {
+        padding: 60px 4%;
+      }
+
+      /* About stats mobile */
+      .about-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .stat-num {
+        font-size: 1.6rem;
+      }
+
+      /* Contact mobile */
+      .contact-form {
+        padding: 22px;
+      }
+
+      /* Footer mobile */
+      footer {
+        padding: 50px 4% 24px;
+      }
+    }
+
+    /* Extra small phones */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+        letter-spacing: -1px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        letter-spacing: -0.8px;
+      }
+
+      .hero-badge {
+        font-size: 0.72rem;
+        padding: 5px 12px;
+      }
+
+      .hero-sub {
+        font-size: 0.88rem;
+      }
+
+      .btn-hero {
+        font-size: 0.82rem;
+        padding: 11px 18px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      /* Leader photos - ensure full face visible */
+      .leader-photo-wrap {
+        height: 300px;
+      }
+
+      .leader-photo-wrap img {
+        object-position: center 15%;
+      }
+
+      .leader-info {
+        padding: 14px 16px 18px;
+      }
+
+      .leader-name {
+        font-size: 1.1rem;
+      }
+
+      .leader-title {
+        font-size: 0.75rem;
+      }
+
+      .leader-quote p {
+        font-size: 0.78rem;
+      }
+
+      /* Dashboard on tiny screens */
+      .dash-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .dash-stat-val {
+        font-size: 1rem;
+      }
+
+      /* Products grid */
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* AI cards */
+      .ai-cards {
+        grid-template-columns: 1fr;
+      }
+
+      /* Testimonials */
+      .testi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Careers */
+      .careers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .careers-banner h2 {
+        font-size: 1.3rem;
+      }
+
+      .careers-banner p {
+        font-size: 0.88rem;
+      }
+
+      /* Section label */
+      .section-label {
+        font-size: 0.7rem;
+      }
+
+      .section-desc {
+        font-size: 0.92rem;
+      }
+
+      /* About mission text */
+      .about-mission-text {
+        font-size: 1.15rem;
+      }
+
+      /* Nav */
+      .nav-logo {
+        font-size: 0.95rem;
+        gap: 6px;
+      }
+
+      .nav-logo img {
+        height: 34px;
+      }
+
+      .dark-toggle {
+        width: 32px;
+        height: 32px;
+        font-size: 0.88rem;
+      }
+
+      .btn-white {
+        font-size: 0.72rem;
+        padding: 7px 12px;
+        border-radius: 8px;
+      }
+
+      .nav-right {
+        gap: 8px;
       }
     }
   </style>
