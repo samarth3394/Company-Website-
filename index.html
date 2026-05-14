@@ -1744,6 +1744,181 @@
       text-decoration: none;
     }
 
+    /* ROLES MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 20px;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: var(--glass);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      transform: translateY(20px) scale(0.95);
+      transition: transform 0.3s ease;
+      color: var(--text);
+    }
+
+    .modal-overlay.open .modal-content {
+      transform: translateY(0) scale(1);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--muted);
+      transition: color 0.2s;
+      line-height: 1;
+    }
+
+    .close-modal:hover {
+      color: var(--text);
+    }
+
+    .modal-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .modal-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .role-card-modal {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 24px;
+    }
+
+    .role-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .role-icon-modal {
+      width: 50px;
+      height: 50px;
+      background: var(--grad-soft);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .role-header h3 {
+      font-size: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .role-header small {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: normal;
+    }
+
+    .role-section-title {
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 15px 0 10px;
+      color: #fff;
+      background: var(--text);
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    
+    [data-dark] .role-section-title {
+      color: #000;
+      background: #fff;
+    }
+
+    .role-card-modal ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    .role-card-modal ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .role-card-modal ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-size: 1.2rem;
+      top: -2px;
+    }
+
+    .modal-footer-action {
+      text-align: center;
+      background: var(--grad-soft);
+      padding: 30px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .roles-grid {
+        grid-template-columns: 1fr;
+      }
+      .modal-content {
+        padding: 24px 16px;
+      }
+      .modal-header h2 {
+        font-size: 1.8rem;
+      }
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1024px) {
       .hero-inner {
@@ -2147,7 +2322,7 @@
     </div>
     <div class="nav-right">
       <div class="dark-toggle" id="darkToggle" title="Toggle Dark Mode">🌙</div>
-      <button class="btn-white">Get Started</button>
+      <button class="btn-white" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
       <div class="hamburger" id="hamburger" onclick="toggleMobile()">
         <span></span><span></span><span></span>
       </div>
@@ -2169,8 +2344,8 @@
         <p class="hero-sub">Bharti Nexus Technologies Pvt Ltd develops intelligent AI systems, enterprise software,
           futuristic digital platforms, and next-generation technology solutions for modern businesses.</p>
         <div class="hero-btns">
-          <button class="btn-hero btn-hero-primary">Start Now →</button>
-          <button class="btn-hero btn-hero-outline">Explore Products</button>
+          <button class="btn-hero btn-hero-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Start Now →</button>
+          <button class="btn-hero btn-hero-outline" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Explore Products</button>
         </div>
       </div>
       <div class="hero-right">
@@ -2616,7 +2791,7 @@
         <h2>Join the Revolution</h2>
         <p>We're hiring exceptional talent who want to work on the hardest and most impactful problems in AI &
           technology. Remote-first, globally diverse, and obsessively ambitious.</p>
-        <button class="btn-white">View Open Roles →</button>
+        <button class="btn-white" onclick="openRolesModal()">View Open Roles →</button>
       </div>
       <div class="careers-grid">
         <div class="career-card reveal reveal-delay-1">
@@ -2774,6 +2949,73 @@
     </div>
   </section>
 
+  <!-- ROLES MODAL -->
+  <div id="rolesModal" class="modal-overlay">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeRolesModal()">&times;</span>
+      <div class="modal-header">
+        <h2>WE ARE <span class="gradient-text">HIRING!</span></h2>
+        <p>Join our innovative team and build the future with us.</p>
+      </div>
+      
+      <div class="roles-grid">
+        <!-- AI Developer -->
+        <div class="role-card-modal">
+          <div class="role-header">
+            <div class="role-icon-modal">🤖</div>
+            <h3>AI DEVELOPER <br><small>( INTERN )</small></h3>
+          </div>
+          <div class="role-body">
+            <div class="role-section-title">WHAT YOU'LL DO:</div>
+            <ul>
+              <li>Build and train AI/ML models</li>
+              <li>Work on real-world AI projects</li>
+              <li>Develop intelligent applications</li>
+              <li>Collaborate with research & development teams</li>
+            </ul>
+            <div class="role-section-title">WHAT WE'RE LOOKING FOR:</div>
+            <ul>
+              <li>Basic knowledge of Python</li>
+              <li>Understanding of ML / DL concepts</li>
+              <li>Passion for AI and problem solving</li>
+              <li>Eagerness to learn and innovate</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Data Collection -->
+        <div class="role-card-modal">
+          <div class="role-header">
+            <div class="role-icon-modal">📊</div>
+            <h3>DATA COLLECTION & ANALYSIS ENGINEER <br><small>( INTERN )</small></h3>
+          </div>
+          <div class="role-body">
+            <div class="role-section-title">WHAT YOU'LL DO:</div>
+            <ul>
+              <li>Collect, clean and organize data</li>
+              <li>Analyze datasets to extract insights</li>
+              <li>Build reports, dashboards & visualizations</li>
+              <li>Support data-driven decision making</li>
+            </ul>
+            <div class="role-section-title">WHAT WE'RE LOOKING FOR:</div>
+            <ul>
+              <li>Strong Excel / Google Sheets skills</li>
+              <li>Basic knowledge of SQL / Python is a plus</li>
+              <li>Analytical mindset and attention to detail</li>
+              <li>Good communication and documentation skills</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal-footer-action">
+        <h3 style="margin-bottom: 15px;">START YOUR JOURNEY. <span style="color:var(--blue)">SHAPE THE FUTURE.</span></h3>
+        <a href="mailto:bhartinexus11@gmail.com?subject=Application%20for%20Internship" class="btn-primary" style="text-decoration: none; display: inline-block; padding: 16px 36px; font-size: 1.1rem; border-radius: 12px;">APPLY NOW</a>
+        <p style="margin-top: 15px; font-size: 0.95rem; color: var(--text);">Send your CV to <strong>bhartinexus11@gmail.com</strong></p>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
@@ -2929,6 +3171,19 @@
       });
     }, { threshold: 0.3 });
     document.querySelectorAll('.ai-card').forEach(c => progObserver.observe(c));
+
+    // MODAL
+    function openRolesModal() {
+      document.getElementById('rolesModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeRolesModal() {
+      document.getElementById('rolesModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('rolesModal').addEventListener('click', function(e) {
+      if (e.target === this) closeRolesModal();
+    });
   </script>
 </body>
 
