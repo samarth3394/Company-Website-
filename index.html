@@ -2,37 +2,49 @@
 <html lang="en">
 
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bharti Nexus Technologies Pvt Ltd – AI & Digital Innovation</title>
 
   <style>
     :root {
-      --blue: #FF9933;
-      --purple: #138808;
-      --grad: linear-gradient(135deg, #FF9933 0%, #138808 100%);
-      --grad-soft: linear-gradient(135deg, rgba(255, 153, 51, 0.08) 0%, rgba(19, 136, 8, 0.08) 100%);
+      /* Premium Light Theme Defaults */
       --white: #ffffff;
-      --off: #f8f9ff;
-      --text: #000000;
-      --muted: #000000;
-      --border: rgba(255, 153, 51, 0.12);
-      --glass: rgba(255, 255, 255, 0.7);
-      --shadow: 0 8px 40px rgba(255, 153, 51, 0.10);
-      --shadow-lg: 0 24px 80px rgba(255, 153, 51, 0.18);
-      --radius: 20px;
-      --radius-sm: 12px;
+      --off: #fafafa;
+      --text: #111111;
+      --muted: #666666;
+      --border: #eaeaea;
+      --glass: rgba(255, 255, 255, 0.85);
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --blue: #000000;
+      --grad: linear-gradient(135deg, #222 0%, #000 100%);
+      --grad-soft: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.04) 100%);
+      
+      /* Primary Brand Colors (used subtly) */
+      --brand-orange: #FF9933;
+      --brand-green: #138808;
     }
 
     [data-dark] {
-      --white: #070714;
-      --off: #0d0d1f;
-      --text: #f0f0ff;
-      --muted: #9ca3af;
-      --border: rgba(19, 136, 8, 0.18);
-      --glass: rgba(13, 13, 31, 0.75);
-      --shadow: 0 8px 40px rgba(19, 136, 8, 0.15);
-      --shadow-lg: 0 24px 80px rgba(19, 136, 8, 0.22);
+      /* Premium Dark Theme Defaults (Linear/Vercel style) */
+      --white: #000000;
+      --off: #0a0a0a;
+      --text: #ededed;
+      --muted: #888888;
+      --border: #222222;
+      --glass: rgba(0, 0, 0, 0.65);
+      --shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.6);
+      --blue: #ffffff;
+      --grad: linear-gradient(135deg, #333 0%, #111 100%);
+      --grad-soft: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.06) 100%);
     }
 
     *,
@@ -49,44 +61,16 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: var(--white);
       color: var(--text);
       overflow-x: hidden;
-      transition: background 0.4s, color 0.4s;
-      cursor: none;
+      transition: background 0.4s ease, color 0.4s ease;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* CURSOR */
-    #cursor {
-      position: fixed;
-      width: 14px;
-      height: 14px;
-      background: var(--blue);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: transform 0.08s, width 0.2s, height 0.2s, background 0.2s;
-      mix-blend-mode: multiply;
-    }
-
-    #cursor-ring {
-      position: fixed;
-      width: 38px;
-      height: 38px;
-      border: 1.5px solid var(--blue);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: transform 0.22s ease, width 0.25s, height 0.25s, opacity 0.2s;
-      opacity: 0.6;
-    }
-
-    body:hover #cursor {
-      opacity: 1;
-    }
+    
 
     /* LOADER */
     #loader {
@@ -162,26 +146,29 @@
     /* NAV */
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 48px);
+      max-width: 1200px;
       z-index: 1000;
-      padding: 18px 5%;
+      padding: 12px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(15, 15, 20, 0.5);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      transition: background 0.4s, box-shadow 0.4s, padding 0.3s;
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
     }
 
     nav.scrolled {
-      background: rgba(15, 15, 20, 0.85);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-      padding: 12px 5%;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      top: 12px;
+      background: var(--glass);
+      box-shadow: var(--shadow-lg);
     }
 
     .nav-logo {
@@ -239,7 +226,7 @@
       color: #e5e7eb;
       background: none;
       border: none;
-      cursor: none;
+      cursor: pointer;
       padding: 8px 14px;
       border-radius: 8px;
       transition: color 0.2s;
@@ -250,17 +237,20 @@
     }
 
     .btn-primary {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.88rem;
-      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
       background: var(--text);
-      color: #fff;
-      border: none;
-      cursor: none;
-      padding: 10px 22px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s, box-shadow 0.2s;
+      color: var(--white);
+      border: 1px solid transparent;
+      cursor: pointer;
+      padding: 10px 20px;
+      border-radius: 100px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+    }
+    [data-dark] .btn-primary {
+      color: #000;
     }
 
     .btn-primary:hover {
@@ -278,7 +268,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: none;
+      cursor: pointer;
       font-size: 1rem;
       transition: background 0.2s;
       backdrop-filter: blur(10px);
@@ -289,8 +279,9 @@
     }
 
     /* SECTIONS COMMON */
+    section { border-bottom: 1px solid var(--border); }
     section {
-      padding: 100px 5%;
+      padding: 140px 5%; max-width: 1200px; margin: 0 auto;
     }
 
     .section-label {
@@ -317,18 +308,14 @@
       border-radius: 50%;
     }
 
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: Arial, Helvetica, sans-serif;
-    }
+    
 
     h1 {
-      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -2px;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--text);
     }
 
     h2 {
@@ -378,30 +365,29 @@
     }
 
     .hero-blob-1 {
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, #FF9933, transparent);
-      top: -10%;
-      right: -5%;
-      animation-delay: 0s;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(150,150,150,0.15), transparent 70%);
+      top: -20%;
+      right: -10%;
+    }
+    [data-dark] .hero-blob-1 {
+      background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
     }
 
     .hero-blob-2 {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, #138808, transparent);
-      bottom: 0%;
-      right: 30%;
-      animation-delay: -4s;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(100,100,100,0.1), transparent 70%);
+      bottom: -10%;
+      left: -10%;
+    }
+    [data-dark] .hero-blob-2 {
+      background: radial-gradient(circle, rgba(255,255,255,0.03), transparent 70%);
     }
 
     .hero-blob-3 {
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, #0ea5e9, transparent);
-      top: 40%;
-      left: -5%;
-      animation-delay: -2s;
+      display: none;
     }
 
     @keyframes float {
@@ -492,7 +478,7 @@
       padding: 14px 30px;
       border-radius: 12px;
       border: none;
-      cursor: none;
+      cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
@@ -507,7 +493,7 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
     }
 
-    .btn-hero-outline {
+    .btn-hero-outline { background: transparent; color: var(--text); border: 1px solid var(--border);
       background: var(--glass);
       color: var(--text);
       border: 1.5px solid var(--border) !important;
@@ -519,7 +505,105 @@
       background: var(--grad-soft);
     }
 
-    /* HERO DASHBOARD */
+    
+    .hero-abstract-graphic {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1000px;
+    }
+    
+    .abstract-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+    }
+    
+    .ring-1 {
+      width: 300px;
+      height: 300px;
+      border: 1px dashed var(--muted);
+      animation: spin 30s linear infinite;
+      opacity: 0.3;
+    }
+    
+    .ring-2 {
+      width: 450px;
+      height: 450px;
+      border: 1px solid var(--border);
+      animation: spin 40s linear infinite reverse;
+    }
+    
+    .abstract-core {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: var(--text);
+      box-shadow: 0 0 60px rgba(255,255,255,0.1);
+      position: absolute;
+    }
+    [data-dark] .abstract-core {
+      background: radial-gradient(circle, #333, #000);
+    }
+    
+    .abstract-glass-panel {
+      position: absolute;
+      width: 320px;
+      height: 200px;
+      background: var(--glass);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      bottom: 40px;
+      right: 0;
+      box-shadow: var(--shadow-lg);
+      transform: rotateX(10deg) rotateY(-15deg);
+      transform-style: preserve-3d;
+    }
+    
+    .panel-header {
+      padding: 12px;
+      display: flex;
+      gap: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .panel-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--muted); opacity: 0.5;
+    }
+    
+    .panel-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .panel-line {
+      height: 8px;
+      border-radius: 4px;
+      background: var(--border);
+    }
+    .w-100 { width: 100%; }
+    .w-75 { width: 75%; }
+    .w-50 { width: 50%; }
+    
+    .panel-block {
+      height: 60px;
+      border-radius: 8px;
+      background: var(--grad-soft);
+      margin-top: 10px;
+      border: 1px solid var(--border);
+    }
+    
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+/* HERO DASHBOARD */
     .dashboard-wrap {
       position: relative;
       width: 100%;
@@ -829,7 +913,7 @@
       transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
       position: relative;
       overflow: hidden;
-      cursor: none;
+      cursor: pointer;
     }
 
     .product-card::before {
@@ -917,15 +1001,7 @@
       gap: 20px;
     }
 
-    .feat-card {
-      background: var(--glass);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: none;
-    }
+    .feat-card { background: var(--off); border: 1px solid var(--border); border-radius: 12px; padding: 32px; transition: all 0.3s ease; cursor: pointer; }
 
     .feat-card:hover {
       transform: translateY(-4px);
@@ -1062,7 +1138,7 @@
       gap: 20px;
     }
 
-    .ai-card {
+    .ai-card { background: var(--off); border: 1px solid var(--border); border-radius: 12px; padding: 32px; transition: all 0.3s ease;
       background: var(--glass);
       border: 1.5px solid var(--border);
       border-radius: var(--radius);
@@ -1071,7 +1147,7 @@
       transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
       position: relative;
       overflow: hidden;
-      cursor: none;
+      cursor: pointer;
     }
 
     .ai-card:hover {
@@ -1181,7 +1257,7 @@
       font-size: 0.95rem;
       padding: 13px 28px;
       border-radius: 10px;
-      cursor: none;
+      cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
@@ -1196,15 +1272,7 @@
       gap: 16px;
     }
 
-    .career-card {
-      background: var(--glass);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 24px;
-      backdrop-filter: blur(10px);
-      transition: transform 0.2s, box-shadow 0.2s;
-      cursor: none;
-    }
+    .career-card { background: var(--off); border: 1px solid var(--border); border-radius: 12px; padding: 32px; transition: all 0.3s ease; cursor: pointer; }
 
     .career-card:hover {
       transform: translateY(-3px);
@@ -1239,15 +1307,7 @@
       gap: 20px;
     }
 
-    .testi-card {
-      background: var(--glass);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: none;
-    }
+    .testi-card { background: var(--off); border: 1px solid var(--border); border-radius: 12px; padding: 32px; transition: all 0.3s ease; cursor: pointer; }
 
     .testi-card:hover {
       transform: translateY(-4px);
@@ -1378,7 +1438,7 @@
       align-items: center;
       justify-content: center;
       font-size: 1rem;
-      cursor: none;
+      cursor: pointer;
       transition: background 0.2s, transform 0.2s;
     }
 
@@ -1471,7 +1531,7 @@
       box-shadow: var(--shadow);
       overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
-      cursor: none;
+      cursor: pointer;
     }
 
     .leader-card:hover {
@@ -1706,7 +1766,7 @@
       display: none;
       flex-direction: column;
       gap: 5px;
-      cursor: none;
+      cursor: pointer;
       padding: 8px;
     }
 
@@ -2293,9 +2353,7 @@
     </div>
   </div>
 
-  <!-- CURSOR -->
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
+  
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
@@ -2714,7 +2772,7 @@
         <p class="section-desc">Our research labs push the boundaries of what machines can understand, reason, and
           create.</p>
       </div>
-      <div class="ai-cards">
+      <div class="ai-cards" style="flex: 1.5;">
         <div class="ai-card reveal reveal-delay-1">
           <div class="ai-card-glow"></div>
           <div class="ai-tag">Consciousness Research</div>
@@ -2781,6 +2839,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
@@ -3089,32 +3148,7 @@
     });
 
     // CURSOR
-    const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      cursor.style.left = mx + 'px';
-      cursor.style.top = my + 'px';
-    });
-    function animRing() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-      requestAnimationFrame(animRing);
-    }
-    animRing();
-    document.querySelectorAll('a, button, .product-card, .feat-card, .testi-card, .ai-card, .career-card, .dark-toggle, .social-link, .trust-logo').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.width = '22px'; cursor.style.height = '22px';
-        ring.style.width = '54px'; ring.style.height = '54px';
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.style.width = '14px'; cursor.style.height = '14px';
-        ring.style.width = '38px'; ring.style.height = '38px';
-      });
-    });
+    
 
     // NAV SCROLL
     window.addEventListener('scroll', () => {
