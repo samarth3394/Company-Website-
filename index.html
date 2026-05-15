@@ -3464,7 +3464,7 @@
           
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = color + '0.3)';
+          ctx.fillStyle = color + '0.6)';
           ctx.fill();
         });
         
@@ -3477,8 +3477,8 @@
             
             if(dist < 150) {
               ctx.beginPath();
-              ctx.strokeStyle = color + (0.1 - dist/1500) + ')';
-              ctx.lineWidth = 0.5;
+              ctx.strokeStyle = color + (0.3 - dist/500) + ')';
+              ctx.lineWidth = 1.0;
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
               ctx.stroke();
