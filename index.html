@@ -62,7 +62,7 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--white);
+      /* background: var(--white); handled by ambient-mesh */
       color: var(--text);
       overflow-x: hidden;
       transition: background 0.4s ease, color 0.4s ease;
@@ -278,7 +278,96 @@
       background: var(--grad-soft);
     }
 
-    /* SECTIONS COMMON */
+    
+    /* PREMIUM 3D & AMBIENT EFFECTS */
+    .ambient-mesh {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+      /* background: var(--white); handled by ambient-mesh */
+      transition: background 0.5s ease;
+    }
+    
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.4;
+      animation: float-orb 20s ease-in-out infinite alternate;
+      mix-blend-mode: normal;
+    }
+    
+    [data-dark] .orb {
+      opacity: 0.15;
+    }
+    
+    .orb-1 {
+      width: 600px; height: 600px;
+      background: var(--brand-orange);
+      top: -10%; left: -10%;
+    }
+    .orb-2 {
+      width: 500px; height: 500px;
+      background: var(--brand-green);
+      bottom: -10%; right: -10%;
+      animation-delay: -5s;
+    }
+    .orb-3 {
+      width: 400px; height: 400px;
+      background: #4F46E5; /* subtle deep blue */
+      top: 40%; left: 60%;
+      animation-delay: -10s;
+    }
+    
+    @keyframes float-orb {
+      0% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(50px, -50px) scale(1.1); }
+      66% { transform: translate(-30px, 30px) scale(0.9); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+    
+    #neural-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+    
+    #cursor-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      transition: opacity 0.3s;
+      opacity: 0;
+    }
+    [data-dark] #cursor-glow {
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+    }
+    body:hover #cursor-glow { opacity: 1; }
+    
+    /* 3D Card Hover */
+    .product-card, .feat-card, .ai-card, .career-card, .testi-card {
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+    }
+    
+    .card-content-3d {
+      transform: translateZ(30px);
+      transition: transform 0.3s ease;
+    }
+    
+    .parallax-layer {
+      transition: transform 0.1s linear;
+    }
+
+/* SECTIONS COMMON */
     section { border-bottom: 1px solid var(--border); }
     section {
       padding: 140px 5%; max-width: 1200px; margin: 0 auto;
@@ -345,7 +434,7 @@
       padding-top: 120px;
       display: flex;
       align-items: center;
-      background: var(--white);
+      /* background: var(--white); handled by ambient-mesh */
       position: relative;
       overflow: hidden;
     }
@@ -514,8 +603,51 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      perspective: 1000px;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      animation: float-hero 8s ease-in-out infinite;
     }
+    
+    @keyframes float-hero {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .abstract-glass-panel {
+      position: absolute;
+      width: 380px;
+      height: 240px;
+      background: rgba(20, 20, 20, 0.4);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      bottom: 20px;
+      right: -20px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+      transform: translateZ(80px) rotateX(15deg) rotateY(-20deg);
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    
+    .hero-abstract-graphic:hover .abstract-glass-panel {
+      transform: translateZ(120px) rotateX(5deg) rotateY(-10deg);
+    }
+    
+    .abstract-core {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff, #666);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset -10px -10px 20px rgba(0,0,0,0.5);
+      position: absolute;
+      transform: translateZ(20px);
+    }
+    [data-dark] .abstract-core {
+      background: radial-gradient(circle at 30% 30%, #555, #000);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 80px rgba(255,255,255,0.05);
+    }
+
     
     .abstract-ring {
       position: absolute;
@@ -878,7 +1010,7 @@
 
     /* PRODUCTS */
     #products {
-      background: var(--white);
+      /* background: var(--white); handled by ambient-mesh */
     }
 
     .section-inner {
@@ -1027,7 +1159,7 @@
 
     /* STATS */
     #about {
-      background: var(--white);
+      /* background: var(--white); handled by ambient-mesh */
     }
 
     .about-inner {
@@ -1219,7 +1351,7 @@
 
     /* CAREERS */
     #careers {
-      background: var(--white);
+      /* background: var(--white); handled by ambient-mesh */
     }
 
     .careers-inner {
@@ -1367,7 +1499,7 @@
 
     /* CONTACT */
     #contact {
-      background: var(--white);
+      /* background: var(--white); handled by ambient-mesh */
     }
 
     .contact-inner {
@@ -1482,7 +1614,7 @@
       padding: 12px 16px;
       border-radius: var(--radius-sm);
       border: 1.5px solid var(--border);
-      background: var(--white);
+      /* background: var(--white); handled by ambient-mesh */
       color: var(--text);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 0.9rem;
@@ -2342,6 +2474,16 @@
 </head>
 
 <body>
+
+  <!-- AMBIENT BACKGROUND -->
+  <div class="ambient-mesh">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <canvas id="neural-canvas"></canvas>
+  <div id="cursor-glow"></div>
+
 
   <!-- LOADER -->
   <div id="loader">
@@ -3218,6 +3360,139 @@
     document.getElementById('rolesModal').addEventListener('click', function(e) {
       if (e.target === this) closeRolesModal();
     });
+  
+    // PREMIUM 3D INTERACTIONS & PARALLAX
+    
+    // 1. Cursor Glow
+    const cursorGlow = document.getElementById('cursor-glow');
+    document.addEventListener('mousemove', e => {
+      if(cursorGlow) {
+        // Use requestAnimationFrame for smooth performance
+        requestAnimationFrame(() => {
+          cursorGlow.style.left = e.clientX + 'px';
+          cursorGlow.style.top = e.clientY + 'px';
+        });
+      }
+    });
+
+    // 2. 3D Card Tilt Effect
+    const cards3D = document.querySelectorAll('.product-card, .feat-card, .ai-card, .career-card, .testi-card');
+    cards3D.forEach(card => {
+      // Wrap content in 3D layer if not already
+      if(!card.querySelector('.card-content-3d')) {
+        const innerHTML = card.innerHTML;
+        card.innerHTML = `<div class="card-content-3d">${innerHTML}</div>`;
+      }
+      
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Very subtle rotation (max 5 degrees)
+        const rotateX = ((y - centerY) / centerY) * -5;
+        const rotateY = ((x - centerX) / centerX) * 5;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        card.style.transition = 'none';
+        
+        // Optional subtle inner light/glare
+        const inner = card.querySelector('.card-content-3d');
+        if(inner) inner.style.transform = `translateZ(30px)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        card.style.transition = 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
+        const inner = card.querySelector('.card-content-3d');
+        if(inner) inner.style.transform = `translateZ(0px)`;
+      });
+    });
+
+    // 3. Parallax Scrolling
+    const parallaxElements = document.querySelectorAll('.hero-abstract-graphic, .section-head, .about-stats');
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(() => {
+        const scrolled = window.scrollY;
+        parallaxElements.forEach(el => {
+          const speed = 0.05; // Subtle cinematic speed
+          el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+    });
+
+    // 4. Neural Network Canvas Particles
+    const canvas = document.getElementById('neural-canvas');
+    if(canvas) {
+      const ctx = canvas.getContext('2d');
+      let width, height, particles;
+      
+      function initParticles() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        particles = [];
+        // Fewer particles for minimal premium feel
+        const count = window.innerWidth < 768 ? 30 : 70;
+        
+        for(let i=0; i<count; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.3, // Very slow movement
+            vy: (Math.random() - 0.5) * 0.3,
+            radius: Math.random() * 1.5 + 0.5
+          });
+        }
+      }
+      
+      function drawParticles() {
+        ctx.clearRect(0, 0, width, height);
+        
+        // Dynamic color based on theme
+        const isDark = document.body.hasAttribute('data-dark');
+        const color = isDark ? 'rgba(255, 255, 255,' : 'rgba(0, 0, 0,';
+        
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          
+          if(p.x < 0 || p.x > width) p.vx *= -1;
+          if(p.y < 0 || p.y > height) p.vy *= -1;
+          
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = color + '0.3)';
+          ctx.fill();
+        });
+        
+        // Draw elegant connections
+        for(let i=0; i<particles.length; i++) {
+          for(let j=i+1; j<particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            
+            if(dist < 150) {
+              ctx.beginPath();
+              ctx.strokeStyle = color + (0.1 - dist/1500) + ')';
+              ctx.lineWidth = 0.5;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(drawParticles);
+      }
+      
+      initParticles();
+      drawParticles();
+      window.addEventListener('resize', initParticles);
+    }
+
   </script>
 </body>
 
