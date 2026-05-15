@@ -4,7 +4,7 @@
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,7 +97,7 @@
     }
 
     .loader-logo {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 2rem;
       font-weight: 800;
       background: linear-gradient(90deg, #FF9933 0%, #FF9933 30%, #FFFFFF 48%, #FFFFFF 52%, #138808 70%, #138808 100%);
@@ -292,14 +292,14 @@
     .orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.4;
-      animation: float-orb 20s ease-in-out infinite alternate;
+      filter: blur(140px);
+      opacity: 0.25;
+      animation: float-orb 25s ease-in-out infinite alternate;
       mix-blend-mode: normal;
     }
     
     [data-dark] .orb {
-      opacity: 0.15;
+      opacity: 0.08;
     }
     
     .orb-1 {
@@ -332,7 +332,7 @@
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      opacity: 0.6;
+      opacity: 0.35;
     }
     
     #cursor-glow {
@@ -400,18 +400,23 @@
     
 
     h1 {
-      font-size: clamp(3rem, 6vw, 5rem);
+      font-size: clamp(3.2rem, 6vw, 4.8rem);
       font-weight: 700;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
       color: var(--text);
+    }
+    h1 em, h2 em {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 600;
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
       line-height: 1.15;
-      letter-spacing: -1.5px;
+      letter-spacing: -0.02em;
     }
 
     h3 {
@@ -1130,31 +1135,65 @@
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 16px;
     }
+    .features-grid .feat-card:nth-child(1) { grid-column: span 2; }
+    .features-grid .feat-card:nth-child(4) { grid-column: span 2; }
+    .features-grid .feat-card:nth-child(7) { grid-column: span 2; }
 
-    .feat-card { background: var(--off); border: 1px solid var(--border); border-radius: 12px; padding: 32px; transition: all 0.3s ease; cursor: pointer; }
+    .feat-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 36px;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .feat-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--grad);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .feat-card:hover::after { opacity: 1; }
 
     .feat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
+      border-color: var(--muted);
+      box-shadow: var(--shadow-lg);
     }
 
     .feat-icon {
-      font-size: 2rem;
-      margin-bottom: 14px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+    }
+    [data-dark] .feat-icon {
+      background: rgba(255,255,255,0.05);
     }
 
     .feat-title {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
     }
 
     .feat-desc {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     /* STATS */
@@ -1435,66 +1474,83 @@
 
     .testi-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
+    .testi-grid .testi-card:first-child {
+      grid-column: span 2;
+    }
 
-    .testi-card { background: var(--off); border: 1px solid var(--border); border-radius: 12px; padding: 32px; transition: all 0.3s ease; cursor: pointer; }
+    .testi-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      cursor: default;
+      position: relative;
+    }
 
     .testi-card:hover {
-      transform: translateY(-4px);
+      border-color: var(--muted);
       box-shadow: var(--shadow);
     }
 
     .testi-quote {
-      font-size: 2.5rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
       line-height: 1;
-      color: var(--text);
-      margin-bottom: 12px;
-      font-family: Arial, Helvetica, sans-serif;
+      color: var(--border);
+      margin-bottom: 16px;
     }
 
     .testi-text {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 20px;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 24px;
+      font-weight: 400;
     }
 
     .testi-author {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
     }
 
     .testi-avatar {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: var(--grad);
+      background: var(--off);
+      border: 2px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
-      color: #fff;
-      font-weight: 700;
-      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 600;
     }
 
     .testi-name {
-      font-size: 0.88rem;
-      font-weight: 700;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
     }
 
     .testi-role {
       font-size: 0.78rem;
       color: var(--muted);
+      margin-top: 2px;
     }
 
     .testi-stars {
-      color: #f59e0b;
-      font-size: 0.85rem;
-      margin-bottom: 14px;
+      color: var(--text);
+      font-size: 0.75rem;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
     }
 
     /* CONTACT */
@@ -1787,18 +1843,29 @@
 
     /* FOOTER */
     footer {
-      background: var(--text);
-      color: rgba(255, 255, 255, 0.7);
-      padding: 80px 5% 30px;
+      background: #0a0a0a;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 100px 5% 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
     }
 
     [data-dark] footer {
-      background: #050510;
+      background: #050505;
     }
 
     .footer-inner {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
+      position: relative;
     }
 
     .footer-top {
@@ -1809,24 +1876,45 @@
     }
 
     .footer-brand p {
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       line-height: 1.7;
       margin: 14px 0 20px;
-      max-width: 260px;
+      max-width: 280px;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .footer-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 12px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+    }
+    .footer-status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34,197,94,0.5);
+      animation: pulse 2s ease-in-out infinite;
     }
 
     .footer-col h4 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 16px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     .footer-col a {
       display: block;
       font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.4);
       text-decoration: none;
       margin-bottom: 10px;
       transition: color 0.2s;
@@ -1836,9 +1924,14 @@
       color: #fff;
     }
 
+    .footer-divider {
+      border: none;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin-bottom: 32px;
+    }
+
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 28px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1847,7 +1940,8 @@
     }
 
     .footer-copy {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
     }
 
     .footer-legal {
@@ -1856,13 +1950,23 @@
     }
 
     .footer-legal a {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.3);
       text-decoration: none;
     }
 
     .footer-legal a:hover {
       color: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-signature {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 1px;
     }
 
     /* REVEAL ANIMATION */
@@ -2540,7 +2644,7 @@
     <div class="hero-inner">
       <div class="hero-left">
         <div class="hero-badge">✦ <span>New</span> Nexus AI 2.0 is live — Now with Reasoning Engine</div>
-        <h1>Building the Future of <span class="gradient-text">AI &amp; Digital Innovation</span></h1>
+        <h1>Building the Future of <em>AI & Digital Innovation</em></h1>
         <p class="hero-sub">Bharti Nexus Technologies Pvt Ltd develops intelligent AI systems, enterprise software,
           futuristic digital platforms, and next-generation technology solutions for modern businesses.</p>
         <div class="hero-btns">
@@ -2635,7 +2739,7 @@
     <div class="section-inner">
       <div class="section-head reveal">
         <div class="section-label">Product Ecosystem</div>
-        <h2>Everything Your Business <span class="gradient-text">Needs to Scale</span></h2>
+        <h2>Everything Your Business <em>Needs to Scale</em></h2>
         <p class="section-desc">A unified suite of AI-powered products engineered for the next generation of enterprise
           operations.</p>
       </div>
@@ -2705,7 +2809,7 @@
     <div class="section-inner">
       <div class="section-head reveal">
         <div class="section-label">Core Capabilities</div>
-        <h2>Technologies That <span class="gradient-text">Define the Future</span></h2>
+        <h2>Technologies That <em>Define the Future</em></h2>
         <p class="section-desc">Cutting-edge technical capabilities built into every Bharti Nexus solution.</p>
       </div>
       <div class="features-grid">
@@ -2772,7 +2876,7 @@
     <div class="about-inner">
       <div class="about-left reveal">
         <div class="section-label">About Us</div>
-        <h2>We're Building the <span class="gradient-text">Intelligence Layer</span> for Global Business</h2>
+        <h2>We're Building the <em>Intelligence Layer</em> for Global Business</h2>
         <p>Bharti Nexus Technologies was founded with a singular vision: to democratize enterprise AI and make
           intelligent automation accessible to every business, from ambitious startups to Fortune 500 enterprises.</p>
         <p>We believe technology should eliminate complexity, not create it. Our products are built with obsessive
@@ -3034,8 +3138,7 @@
         <div class="testi-card reveal reveal-delay-1">
           <div class="testi-stars">★★★★★</div>
           <div class="testi-quote">"</div>
-          <p class="testi-text">Bharti AI transformed our customer support operations. We now resolve 87% of tickets
-            autonomously with higher satisfaction scores than human agents. The ROI was visible in week one.</p>
+          <p class="testi-text">Bharti AI completely changed how we handle support. Within weeks, we were resolving 87% of tickets automatically — and our customers actually preferred it. The team's responsiveness made the integration seamless.</p>
           <div class="testi-author">
             <div class="testi-avatar">RK</div>
             <div>
@@ -3047,8 +3150,7 @@
         <div class="testi-card reveal reveal-delay-2">
           <div class="testi-stars">★★★★★</div>
           <div class="testi-quote">"</div>
-          <p class="testi-text">Nexus Analytics gave us a single source of truth across 14 data systems. The
-            AI-generated insights helped us identify a ₹40 Cr revenue opportunity we would have missed entirely.</p>
+          <p class="testi-text">We had data scattered across 14 systems with no clarity. Nexus Analytics unified everything and surfaced insights we never would have found — including a ₹40 Cr opportunity hiding in plain sight.</p>
           <div class="testi-author">
             <div class="testi-avatar">PS</div>
             <div>
@@ -3060,8 +3162,7 @@
         <div class="testi-card reveal reveal-delay-3">
           <div class="testi-stars">★★★★★</div>
           <div class="testi-quote">"</div>
-          <p class="testi-text">We migrated our entire enterprise stack to Nexus Cloud in 3 months. The performance
-            improvement was 4x, costs dropped 60%, and we've had zero unplanned downtime in 18 months.</p>
+          <p class="testi-text">Migrating our entire stack to Nexus Cloud was honestly the best decision we made last year. 4x faster, 60% cheaper, and zero unplanned downtime in 18 months. Their engineering team is world-class.</p>
           <div class="testi-author">
             <div class="testi-avatar">AM</div>
             <div>
@@ -3231,6 +3332,10 @@
             <div class="social-link">in</div>
             <div class="social-link">gh</div>
           </div>
+          <div class="footer-status">
+            <div class="footer-status-dot"></div>
+            All Systems Operational
+          </div>
         </div>
         <div class="footer-col">
           <h4>Products</h4>
@@ -3268,8 +3373,9 @@
           <a href="#">Partners</a>
         </div>
       </div>
+      <hr class="footer-divider">
       <div class="footer-bottom">
-        <div class="footer-copy">© 2025 Bharti Nexus Technologies Pvt Ltd. All rights reserved. Made with ♥ in India.
+        <div class="footer-copy">© 2025 Bharti Nexus Technologies Pvt Ltd. All rights reserved.
         </div>
         <div class="footer-legal">
           <a href="#">Privacy Policy</a>
@@ -3277,6 +3383,9 @@
           <a href="#">Cookie Policy</a>
           <a href="#">Security</a>
         </div>
+      </div>
+      <div class="footer-signature">
+        DESIGNED & BUILT WITH ♥ IN PUNE, INDIA
       </div>
     </div>
   </footer>
@@ -3464,7 +3573,7 @@
           
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = color + '0.6)';
+          ctx.fillStyle = color + '0.4)';
           ctx.fill();
         });
         
@@ -3475,10 +3584,10 @@
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx*dx + dy*dy);
             
-            if(dist < 150) {
+            if(dist < 120) {
               ctx.beginPath();
-              ctx.strokeStyle = color + (0.3 - dist/500) + ')';
-              ctx.lineWidth = 1.0;
+              ctx.strokeStyle = color + (0.15 - dist/800) + ')';
+              ctx.lineWidth = 0.6;
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
               ctx.stroke();
