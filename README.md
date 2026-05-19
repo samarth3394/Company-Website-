@@ -1,6 +1,6 @@
-# Bharti Nexus Technologies Pvt Ltd
+# Bharti Nexus Technologies
 
-Welcome to the official website repository for **Bharti Nexus Technologies Pvt Ltd**, an AI-driven, futuristic enterprise technology company.
+Welcome to the official website repository for **Bharti Nexus Technologies**, an AI-driven, futuristic enterprise technology company.
 
 ## 🚀 Overview
 
