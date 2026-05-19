@@ -2798,7 +2798,7 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-right">
-      <div class="dark-toggle" id="darkToggle" title="Toggle Dark Mode">🌙</div>
+
       <button class="btn-white" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
       <div class="hamburger" id="hamburger" onclick="toggleMobile()">
         <span></span><span></span><span></span>
@@ -3171,11 +3171,7 @@
               <p>"Our vision is to break boundaries and build intelligent solutions that drive unparalleled growth and
                 efficiency."</p>
             </div>
-            <div class="leader-social">
-              <a href="#" title="LinkedIn">in</a>
-              <a href="#" title="Twitter">𝕏</a>
-              <a href="#" title="Email">📧</a>
-            </div>
+
           </div>
         </div>
       </div>
@@ -3580,13 +3576,6 @@
       nav.classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // DARK MODE
-    let dark = false;
-    document.getElementById('darkToggle').addEventListener('click', () => {
-      dark = !dark;
-      document.body.toggleAttribute('data-dark', dark);
-      document.getElementById('darkToggle').textContent = dark ? '☀️' : '🌙';
-    });
 
     // MOBILE MENU
     function toggleMobile() {
@@ -3733,9 +3722,8 @@
       function drawParticles() {
         ctx.clearRect(0, 0, width, height);
         
-        // Dynamic color based on theme
-        const isDark = document.body.hasAttribute('data-dark');
-        const color = isDark ? 'rgba(255, 255, 255,' : 'rgba(0, 0, 0,';
+        // Fixed light theme color
+        const color = 'rgba(0, 0, 0,';
         
         particles.forEach(p => {
           p.x += p.vx;
