@@ -1990,6 +1990,61 @@
       letter-spacing: 1px;
     }
 
+    /* COMING SOON BADGE */
+    .coming-soon-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #F59E0B;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+      z-index: 2;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+    }
+    .whatsapp-tooltip {
+      position: absolute;
+      bottom: 64px;
+      right: 0;
+      background: var(--text);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+    }
+
     /* REVEAL ANIMATION */
     .reveal {
       opacity: 0;
@@ -2827,7 +2882,7 @@
     <a href="#hero" onclick="closeMobile()">Home</a>
     <a href="#products" onclick="closeMobile()">Products</a>
     <a href="#features" onclick="closeMobile()">Solutions</a>
-    <a href="#ai-research" onclick="closeMobile()">AI Research</a>
+    <a href="#ai-research" onclick="closeMobile()">Focus Areas</a>
     <a href="#careers" onclick="closeMobile()">Careers</a>
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
@@ -2840,7 +2895,7 @@
       <a href="#hero" class="active">Home</a>
       <a href="#products">Products</a>
       <a href="#features">Solutions</a>
-      <a href="#ai-research">AI Research</a>
+      <a href="#ai-research">Focus Areas</a>
       <a href="#careers">Careers</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
@@ -2875,8 +2930,8 @@
       <div class="hero-right">
         <div class="float-card float-card-1">
           <div class="fc-icon">🧠</div>
-          <div class="fc-label">AI Models Deployed</div>
-          <div class="fc-val green">+340 Active</div>
+          <div class="fc-label">Projects Delivered</div>
+          <div class="fc-val green">10+ Active</div>
         </div>
         <div class="dashboard-wrap">
           <div class="dashboard-main">
@@ -2892,8 +2947,8 @@
                 <div class="dash-stat-label">Model Accuracy</div>
               </div>
               <div class="dash-stat">
-                <div class="dash-stat-val">4.2<span style="font-size:0.9rem">M</span></div>
-                <div class="dash-stat-label">API Calls / Day</div>
+                <div class="dash-stat-val">50<span style="font-size:0.9rem">+</span></div>
+                <div class="dash-stat-label">Happy Clients</div>
               </div>
               <div class="dash-stat">
                 <div class="dash-stat-val">12<span style="font-size:0.9rem">ms</span></div>
@@ -2901,39 +2956,32 @@
               </div>
             </div>
             <div class="dash-chart">
-              <div class="chart-label">Revenue Growth ↑ 127% YoY</div>
+              <div class="chart-label">Project Growth — Steady & Growing</div>
               <div class="chart-bars">
-                <div class="chart-bar" style="height:35%"></div>
-                <div class="chart-bar" style="height:50%"></div>
-                <div class="chart-bar" style="height:42%"></div>
-                <div class="chart-bar" style="height:68%"></div>
-                <div class="chart-bar" style="height:58%"></div>
-                <div class="chart-bar" style="height:82%"></div>
-                <div class="chart-bar" style="height:75%"></div>
-                <div class="chart-bar" style="height:90%"></div>
+                <div class="chart-bar" style="height:25%"></div>
+                <div class="chart-bar" style="height:40%"></div>
+                <div class="chart-bar" style="height:55%"></div>
+                <div class="chart-bar" style="height:65%"></div>
+                <div class="chart-bar" style="height:80%"></div>
                 <div class="chart-bar" style="height:100%"></div>
               </div>
             </div>
             <div class="dash-row">
               <div class="dash-mini">
-                <div class="dash-mini-title">Users Online</div>
-                <div class="dash-mini-val up">↑ 18,430</div>
-              </div>
-              <div class="dash-mini">
                 <div class="dash-mini-title">Uptime SLA</div>
                 <div class="dash-mini-val blue">99.99%</div>
               </div>
               <div class="dash-mini">
-                <div class="dash-mini-title">AI Queries</div>
-                <div class="dash-mini-val up">↑ 2.1M</div>
+                <div class="dash-mini-title">Client Satisfaction</div>
+                <div class="dash-mini-val up">↑ 95%</div>
               </div>
             </div>
           </div>
         </div>
         <div class="float-card float-card-2">
           <div class="fc-icon">🚀</div>
-          <div class="fc-label">Global Deployments</div>
-          <div class="fc-val" style="color:var(--blue)">24 Countries</div>
+          <div class="fc-label">Serving Across</div>
+          <div class="fc-val" style="color:var(--blue)">Pan-India</div>
         </div>
       </div>
     </div>
@@ -2964,56 +3012,64 @@
           operations.</p>
       </div>
       <div class="products-grid">
-        <div class="product-card reveal reveal-delay-1">
+        <div class="product-card reveal reveal-delay-1" style="position:relative;">
+          <span class="coming-soon-badge">Coming Soon</span>
           <div class="pc-glow"></div>
           <div class="pc-icon"><img src="logo2.png" alt="Icon"></div>
           <div class="pc-title">Bharti AI</div>
           <p class="pc-desc">Generative AI platform with reasoning engines, multimodal capabilities, and
             enterprise-grade LLM fine-tuning for your domain.</p>
         </div>
-        <div class="product-card reveal reveal-delay-2">
+        <div class="product-card reveal reveal-delay-2" style="position:relative;">
+          <span class="coming-soon-badge">Coming Soon</span>
           <div class="pc-glow"></div>
           <div class="pc-icon"><img src="logo2.png" alt="Icon"></div>
           <div class="pc-title">Nexus Cloud</div>
           <p class="pc-desc">Hyper-scalable cloud infrastructure with auto-scaling, global edge delivery, and
             zero-downtime deployments for critical workloads.</p>
         </div>
-        <div class="product-card reveal reveal-delay-3">
+        <div class="product-card reveal reveal-delay-3" style="position:relative;">
+          <span class="coming-soon-badge">Coming Soon</span>
           <div class="pc-glow"></div>
           <div class="pc-icon"><img src="logo2.png" alt="Icon"></div>
           <div class="pc-title">Nexus CRM</div>
           <p class="pc-desc">AI-driven customer intelligence platform that predicts churn, automates pipelines, and
             delivers personalized customer journeys at scale.</p>
         </div>
-        <div class="product-card reveal reveal-delay-1">
+        <div class="product-card reveal reveal-delay-1" style="position:relative;">
+          <span class="coming-soon-badge">Coming Soon</span>
           <div class="pc-glow"></div>
           <div class="pc-icon"><img src="logo2.png" alt="Icon"></div>
           <div class="pc-title">Bharti HRMS</div>
           <p class="pc-desc">Next-gen human resource management with predictive hiring, performance intelligence,
             payroll automation, and culture analytics.</p>
         </div>
-        <div class="product-card reveal reveal-delay-2">
+        <div class="product-card reveal reveal-delay-2" style="position:relative;">
+          <span class="coming-soon-badge">Coming Soon</span>
           <div class="pc-glow"></div>
           <div class="pc-icon"><img src="logo2.png" alt="Icon"></div>
           <div class="pc-title">Nexus Workspace</div>
           <p class="pc-desc">A unified digital workspace integrating docs, video, projects, and AI assistants into a
             seamless collaborative environment.</p>
         </div>
-        <div class="product-card reveal reveal-delay-3">
+        <div class="product-card reveal reveal-delay-3" style="position:relative;">
+          <span class="coming-soon-badge">Coming Soon</span>
           <div class="pc-glow"></div>
           <div class="pc-icon"><img src="logo2.png" alt="Icon"></div>
           <div class="pc-title">Nexus Analytics</div>
           <p class="pc-desc">Real-time business intelligence with AI-powered anomaly detection, predictive dashboards,
             and automated insight generation.</p>
         </div>
-        <div class="product-card reveal reveal-delay-1">
+        <div class="product-card reveal reveal-delay-1" style="position:relative;">
+          <span class="coming-soon-badge">Coming Soon</span>
           <div class="pc-glow"></div>
           <div class="pc-icon"><img src="logo2.png" alt="Icon"></div>
           <div class="pc-title">Nexus Security</div>
           <p class="pc-desc">Zero-trust cybersecurity framework with AI threat detection, automated incident response,
             and compliance management.</p>
         </div>
-        <div class="product-card reveal reveal-delay-2">
+        <div class="product-card reveal reveal-delay-2" style="position:relative;">
+          <span class="coming-soon-badge">Coming Soon</span>
           <div class="pc-glow"></div>
           <div class="pc-icon"><img src="logo2.png" alt="Icon"></div>
           <div class="pc-title">Bharti Voice AI</div>
@@ -3103,16 +3159,16 @@
           attention to user experience, reliability, and measurable business impact.</p>
         <div class="about-stats">
           <div class="stat-card reveal reveal-delay-1">
-            <div class="stat-num">340+</div>
-            <div class="stat-label">AI Models in Production</div>
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Projects Delivered</div>
           </div>
           <div class="stat-card reveal reveal-delay-2">
-            <div class="stat-num">2.4M+</div>
-            <div class="stat-label">Enterprise Users</div>
+            <div class="stat-num">50+</div>
+            <div class="stat-label">Happy Clients</div>
           </div>
           <div class="stat-card reveal reveal-delay-3">
-            <div class="stat-num">1,200+</div>
-            <div class="stat-label">Projects Delivered</div>
+            <div class="stat-num">15+</div>
+            <div class="stat-label">Solutions Built</div>
           </div>
           <div class="stat-card reveal reveal-delay-4">
             <div class="stat-num">60+</div>
@@ -3166,7 +3222,7 @@
           </div>
           <div class="leader-info">
             <div class="leader-role-badge">★ Founder</div>
-            <div class="leader-name">Samarth Choudhar</div>
+            <div class="leader-name">Samarth Choudhari</div>
             <div class="leader-title">Founder & COO, Bharti Nexus Technologies</div>
             <div class="leader-quote">
               <span class="leader-quote-icon">❝</span>
@@ -3176,8 +3232,7 @@
             </div>
             <div class="leader-social">
               <a href="https://www.linkedin.com/in/samarth-choudhar-516b692b3" target="_blank" title="LinkedIn">in</a>
-              <a href="#" title="Twitter">𝕏</a>
-              <a href="#" title="Email">📧</a>
+              <a href="mailto:bhartinexus11@gmail.com" title="Email">📧</a>
             </div>
           </div>
         </div>
@@ -3198,8 +3253,7 @@
             </div>
             <div class="leader-social">
               <a href="https://www.linkedin.com/in/ganesh-jawale-aa319432a" target="_blank" title="LinkedIn">in</a>
-              <a href="#" title="Twitter">𝕏</a>
-              <a href="#" title="Email">📧</a>
+              <a href="mailto:bhartinexus11@gmail.com" title="Email">📧</a>
             </div>
           </div>
         </div>
@@ -3225,80 +3279,44 @@
     </div>
   </section>
 
-  <!-- AI RESEARCH -->
+  <!-- OUR FOCUS AREAS -->
   <section id="ai-research">
     <div class="section-inner">
       <div class="section-head reveal">
-        <div class="section-label">AI Research</div>
-        <h2>Advancing the <span class="gradient-text">Frontier of Intelligence</span></h2>
-        <p class="section-desc">Our research labs push the boundaries of what machines can understand, reason, and
-          create.</p>
+        <div class="section-label">Our Focus Areas</div>
+        <h2>What We <span class="gradient-text">Specialize In</span></h2>
+        <p class="section-desc">We help businesses grow with practical technology solutions — from web development to AI automation.</p>
       </div>
       <div class="ai-cards" style="flex: 1.5;">
         <div class="ai-card reveal reveal-delay-1">
           <div class="ai-card-glow"></div>
-          <div class="ai-tag">Consciousness Research</div>
-          <h3>Synthetic Consciousness Systems</h3>
-          <p>Investigating emergent consciousness in large-scale neural architectures — building models that can
-            self-reflect, introspect, and simulate subjective experience.</p>
-          <div class="ai-progress">
-            <div class="ai-prog-label"><span>Research Maturity</span><span>72%</span></div>
-            <div class="ai-prog-bar">
-              <div class="ai-prog-fill" style="width:72%"></div>
-            </div>
-          </div>
+          <div class="ai-tag">Development</div>
+          <h3>🌐 Web & App Development</h3>
+          <p>Custom websites, web apps, and mobile applications built with modern technologies for businesses of all sizes.</p>
         </div>
         <div class="ai-card reveal reveal-delay-2">
           <div class="ai-card-glow"></div>
-          <div class="ai-tag">Reasoning Systems</div>
-          <h3>Causal AI Reasoning</h3>
-          <p>Developing AI systems that don't just predict but causally reason — understanding why events happen and
-            simulating counterfactual futures for decision intelligence.</p>
-          <div class="ai-progress">
-            <div class="ai-prog-label"><span>Research Maturity</span><span>85%</span></div>
-            <div class="ai-prog-bar">
-              <div class="ai-prog-fill" style="width:85%"></div>
-            </div>
-          </div>
+          <div class="ai-tag">AI & Automation</div>
+          <h3>🤖 AI & Automation</h3>
+          <p>Intelligent automation solutions that streamline repetitive tasks and boost productivity using the latest AI tools.</p>
         </div>
         <div class="ai-card reveal reveal-delay-3">
           <div class="ai-card-glow"></div>
-          <div class="ai-tag">Neural Architecture</div>
-          <h3>Sparse Neural Architectures</h3>
-          <p>Designing next-generation sparse transformer architectures that achieve GPT-4 class performance at 10x
-            lower computational cost and carbon footprint.</p>
-          <div class="ai-progress">
-            <div class="ai-prog-label"><span>Research Maturity</span><span>91%</span></div>
-            <div class="ai-prog-bar">
-              <div class="ai-prog-fill" style="width:91%"></div>
-            </div>
-          </div>
+          <div class="ai-tag">Business Tools</div>
+          <h3>📊 CRM & Business Tools</h3>
+          <p>Customer management systems and business software tailored to your workflow and growth goals.</p>
         </div>
         <div class="ai-card reveal reveal-delay-1">
           <div class="ai-card-glow"></div>
-          <div class="ai-tag">Future Intelligence</div>
-          <h3>Agentic AI Systems</h3>
-          <p>Building fully autonomous AI agents capable of multi-step planning, tool use, web browsing, code execution,
-            and self-directed task completion without human handholding.</p>
-          <div class="ai-progress">
-            <div class="ai-prog-label"><span>Research Maturity</span><span>78%</span></div>
-            <div class="ai-prog-bar">
-              <div class="ai-prog-fill" style="width:78%"></div>
-            </div>
-          </div>
+          <div class="ai-tag">Design</div>
+          <h3>🎨 UI/UX Design</h3>
+          <p>Clean, user-friendly designs that make your digital product look professional and convert visitors into customers.</p>
         </div>
         <div class="ai-card reveal reveal-delay-2">
           <div class="ai-card-glow"></div>
-          <div class="ai-tag">Automation</div>
-          <h3>Cognitive Automation</h3>
-          <p>Merging symbolic AI with neural networks to create hybrid systems that reason over enterprise knowledge
-            graphs and execute intelligent multi-domain workflows.</p>
-          <div class="ai-progress">
-            <div class="ai-prog-label"><span>Research Maturity</span><span>68%</span></div>
-            <div class="ai-prog-bar">
-              <div class="ai-prog-fill" style="width:68%"></div>
-            </div>
-          </div>
+          <div class="ai-tag">Strategy</div>
+          <h3>📈 Digital Strategy & Consulting</h3>
+          <p>Helping startups and businesses plan their digital journey — from idea to execution with clear roadmaps.</p>
         </div>
       </div>
     </div>
@@ -3343,53 +3361,6 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <div class="section-inner">
-      <div class="section-head reveal">
-        <div class="section-label">Testimonials</div>
-        <h2>What Our <span class="gradient-text">Clients Say</span></h2>
-      </div>
-      <div class="testi-grid">
-        <div class="testi-card reveal reveal-delay-1">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-quote">"</div>
-          <p class="testi-text">Bharti AI completely changed how we handle support. Within weeks, we were resolving 87% of tickets automatically — and our customers actually preferred it. The team's responsiveness made the integration seamless.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">RK</div>
-            <div>
-              <div class="testi-name">Rajesh Kumar</div>
-              <div class="testi-role">CTO, FinEdge Solutions</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card reveal reveal-delay-2">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-quote">"</div>
-          <p class="testi-text">We had data scattered across 14 systems with no clarity. Nexus Analytics unified everything and surfaced insights we never would have found — including a ₹40 Cr opportunity hiding in plain sight.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">PS</div>
-            <div>
-              <div class="testi-name">Priya Sharma</div>
-              <div class="testi-role">VP Data, Orbis Retail Group</div>
-            </div>
-          </div>
-        </div>
-        <div class="testi-card reveal reveal-delay-3">
-          <div class="testi-stars">★★★★★</div>
-          <div class="testi-quote">"</div>
-          <p class="testi-text">Migrating our entire stack to Nexus Cloud was honestly the best decision we made last year. 4x faster, 60% cheaper, and zero unplanned downtime in 18 months. Their engineering team is world-class.</p>
-          <div class="testi-author">
-            <div class="testi-avatar">AM</div>
-            <div>
-              <div class="testi-name">Arun Mehta</div>
-              <div class="testi-role">Head of Engineering, LogiStack</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -3546,7 +3517,6 @@
           <p>Building next-generation AI systems and digital platforms that empower modern enterprises to operate
             smarter, faster, and more intelligently.</p>
           <div class="social-links">
-            <div class="social-link">𝕏</div>
             <div class="social-link">in</div>
             <div class="social-link">gh</div>
           </div>
@@ -3574,21 +3544,14 @@
         </div>
         <div class="footer-col">
           <h4>Resources</h4>
-          <a href="#">Documentation</a>
-          <a href="#">API Reference</a>
-          <a href="#">Blog</a>
-          <a href="#">Research Papers</a>
-          <a href="#">Case Studies</a>
-          <a href="#">Community</a>
+          <a href="#about">About Us</a>
+          <a href="#careers">Careers</a>
+          <a href="#contact">Contact</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="#">About Us</a>
-          <a href="#">Careers</a>
-          <a href="#">Press</a>
-          <a href="#">Investors</a>
-          <a href="#">Contact</a>
-          <a href="#">Partners</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
         </div>
       </div>
       <hr class="footer-divider">
@@ -3596,10 +3559,8 @@
         <div class="footer-copy">© 2025 Bharti Nexus Technologies. All rights reserved.
         </div>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-          <a href="#">Security</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
         </div>
       </div>
       <div class="footer-signature">
@@ -3607,6 +3568,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+  <a href="https://wa.me/919511798326?text=Hi%20Bharti%20Nexus!%20I'd%20like%20to%20know%20more%20about%20your%20services." target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">
+    <div class="whatsapp-tooltip">Chat with us!</div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
   <script>
     // LOADER
