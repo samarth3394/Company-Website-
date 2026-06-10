@@ -220,11 +220,19 @@
       padding: 0 24px;
     }
     .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 16px;
       font-weight: 700;
       color: #fff;
       text-decoration: none;
       letter-spacing: -0.03em;
+    }
+    .nav-logo {
+      height: 24px;
+      width: auto;
+      object-fit: contain;
     }
     .nav-links {
       display: flex;
@@ -1239,7 +1247,10 @@
   <!-- Navbar -->
   <nav id="navbar">
     <div class="nav-container">
-      <a href="#" class="nav-brand">Bharti Nexus</a>
+      <a href="#" class="nav-brand">
+        <img src="logo.png" alt="Bharti Nexus Logo" class="nav-logo">
+        Bharti Nexus
+      </a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#products">Products</a>
