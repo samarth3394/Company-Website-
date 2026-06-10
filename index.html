@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bharti Nexus Technologies | Building the Future of AI</title>
+  <meta name="description" content="Intelligent systems, enterprise software, and next-generation platforms for modern businesses.">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #000000;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.75;
+      font-size: 17px;
+    }
+    
+    /* Layout Rules */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    section {
+      padding: 160px 0;
+    }
+    @media (max-width: 768px) {
+      section {
+        padding: 80px 0;
+      }
+    }
+    
+    /* Reusable Typography */
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #999999;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .section-headline {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .section-subtext {
+      font-size: 17px;
+      color: #999999;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 64px auto;
+    }
+    @media (max-width: 768px) {
+      .section-headline { font-size: 36px; }
+    }
+    
+    /* Animation Base Classes */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Apple-Style Global Navbar */
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 44px;
+      z-index: 1000;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1000px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      gap: 32px;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      transition: color 0.3s ease;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      height: 44px;
+    }
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .hamburger-line {
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+    }
+    
+    /* Hero Section */
+    #hero {
+      padding-top: 140px;
+      padding-bottom: 60px;
+    }
+    .hero-content {
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center; 
+      padding: 0 24px;
+      margin-bottom: 60px;
+    }
+    .hero-video-wrapper {
+      position: relative;
+      width: 80%;
+      max-width: 1100px;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      object-fit: cover;
+    }
+    .hero-eyebrow {
+      font-size: 11px; 
+      font-weight: 500; 
+      letter-spacing: 0.2em; 
+      color: rgba(255,255,255,0.5); 
+      text-transform: uppercase; 
+      margin-bottom: 24px;
+    }
+    .hero-headline {
+      font-size: clamp(48px, 9vw, 120px); 
+      font-weight: 700; 
+      letter-spacing: -0.04em; 
+      line-height: 1.0; 
+      margin: 0 0 32px; 
+      max-width: 1000px;
+    }
+    .text-gray {
+      background: linear-gradient(180deg, #ffffff 0%, #a6a6a6 50%, #595959 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-silver {
+      background: linear-gradient(180deg, #ffffff 0%, #cccccc 50%, #7f7f7f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-glow {
+      background: linear-gradient(180deg, #ffffff 0%, #e6e6e6 50%, #999999 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* Significantly reduced reflection (subtle metallic shine) */
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.25));
+    }
+    .hero-subline {
+      font-size: clamp(16px, 2vw, 22px); 
+      color: rgba(255,255,255,0.65); 
+      max-width: 600px; 
+      line-height: 1.6; 
+      margin: 0 0 48px;
+    }
+    .hero-buttons {
+      display: flex; 
+      gap: 16px; 
+      flex-wrap: wrap; 
+      justify-content: center;
+    }
+    .btn-primary {
+      padding: 16px 36px; 
+      background: #fff; 
+      color: #000; 
+      font-size: 15px; 
+      font-weight: 600; 
+      border-radius: 980px; 
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      transition: opacity 0.3s ease;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+    .btn-secondary {
+      padding: 16px 36px; 
+      background: transparent; 
+      color: #fff; 
+      font-size: 15px; 
+      font-weight: 500; 
+      border-radius: 980px; 
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3); 
+      letter-spacing: -0.01em;
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.5);
+    }
+    @media (max-width: 768px) {
+      .hero-headline { font-size: 44px; }
+      .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+    }
+    .scroll-indicator {
+      position: absolute; 
+      bottom: 40px; left: 50%; 
+      transform: translateX(-50%); 
+      z-index: 2; 
+      animation: bounce 2s infinite;
+    }
+    .scroll-indicator-line {
+      width: 1px; 
+      height: 60px; 
+      background: rgba(255,255,255,0.3); 
+      margin: auto;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+      40% { transform: translateY(-20px) translateX(-50%); }
+      60% { transform: translateY(-10px) translateX(-50%); }
+    }
+    
+    /* Stats Section */
+    #stats {
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .stat-item {
+      text-align: center;
+      position: relative;
+    }
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -12px;
+      top: 15%;
+      height: 70%;
+      width: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .stat-value {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 2px;
+      margin-bottom: 6px;
+    }
+    .stat-number {
+      font-size: 54px;
+      font-weight: 700;
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.1;
+    }
+    .stat-suffix {
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+    }
+    .stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #86868b;
+      letter-spacing: 0.08em;
+    }
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; }
+      .stat-item:not(:last-child)::after { display: none; }
+    }
+    
+    /* Domains Section */
+    .domains-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .domain-pill {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 980px;
+      padding: 10px 22px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: default;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .domain-pill:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+    
+    /* Product Ecosystem — Premium Showcase */
+    .products-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .product-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: #0a0a0a;
+      padding: 56px 48px;
+      transition: background 0.4s ease;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-row::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(ellipse at 0% 50%, rgba(255,255,255,0.03) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .product-row:hover::before {
+      opacity: 1;
+    }
+    .product-row:hover {
+      background: #0d0d0d;
+    }
+    .product-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+    }
+    .product-number {
+      font-size: 11px;
+      font-weight: 500;
+      color: #555;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .product-name {
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+    .product-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #555;
+      margin-top: 8px;
+    }
+    .product-tag-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #333;
+    }
+    .product-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .product-right p {
+      font-size: 16px;
+      color: #86868b;
+      line-height: 1.7;
+      max-width: 420px;
+      text-align: right;
+    }
+    @media (max-width: 768px) {
+      .product-row { grid-template-columns: 1fr; padding: 40px 28px; gap: 20px; }
+      .product-name { font-size: 28px; }
+      .product-right p { text-align: left; max-width: 100%; font-size: 15px; }
+    }
+    
+    /* Core Capabilities */
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px 32px;
+    }
+    .capability-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .cap-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .cap-icon {
+      font-size: 24px;
+    }
+    .cap-title {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .cap-desc {
+      color: #666666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    @media (max-width: 1024px) {
+      .capabilities-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .capabilities-grid { grid-template-columns: 1fr; }
+    }
+    
+    /* About Section */
+    #about {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .about-headline {
+      font-size: clamp(40px, 6vw, 72px);
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 32px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .about-body {
+      max-width: 680px;
+      margin: 0 auto 64px auto;
+      text-align: center;
+      color: #999;
+      font-size: 17px;
+    }
+    .about-stats {
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      margin-bottom: 80px;
+      flex-wrap: wrap;
+    }
+    .about-stat {
+      text-align: center;
+    }
+    .about-stat-num {
+      font-size: 48px;
+      font-weight: 700;
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+    }
+    .about-stat-label {
+      font-size: 12px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 8px;
+    }
+    .mission-quote {
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 80px auto;
+      line-height: 1.4;
+    }
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 64px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .principle-title {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+    .principle-desc {
+      color: #999;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .principles-grid { grid-template-columns: 1fr; }
+      .about-stats { gap: 32px; }
+      .mission-quote { font-size: 22px; }
+    }
+    
+    /* Leadership */
+    .leaders-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .leader-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 40px 32px;
+      text-align: center;
+      transition: background 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .leader-card:hover {
+      background: rgba(255,255,255,0.04);
+    }
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin: 0 auto 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .leader-name {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .leader-title {
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    .leader-badge {
+      display: inline-block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.05);
+      padding: 4px 12px;
+      border-radius: 980px;
+      margin-bottom: 24px;
+    }
+    .leader-quote {
+      font-style: italic;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .linkedin-icon {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .linkedin-icon:hover {
+      color: #fff;
+    }
+    @media (max-width: 1024px) {
+      .leaders-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .leaders-grid { grid-template-columns: 1fr; }
+    }
+    
+    /* Focus Areas */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+    .focus-item {
+      text-align: center;
+    }
+    .focus-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .focus-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .focus-desc {
+      font-size: 14px;
+      color: #999;
+      line-height: 1.5;
+    }
+    @media (max-width: 1024px) {
+      .focus-grid { grid-template-columns: repeat(2, 1fr); gap: 48px 24px; }
+      .focus-item:last-child { grid-column: 1 / -1; max-width: 300px; margin: 0 auto; }
+    }
+    @media (max-width: 600px) {
+      .focus-grid { grid-template-columns: 1fr; }
+      .focus-item:last-child { grid-column: auto; }
+    }
+    
+    /* Careers */
+    #careers {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .careers-cta {
+      display: inline-block;
+      padding: 16px 36px;
+      background: #fff;
+      color: #000;
+      border-radius: 980px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 80px;
+      transition: opacity 0.3s;
+    }
+    .careers-cta:hover {
+      opacity: 0.9;
+    }
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: left;
+    }
+    .perk-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .perk-title {
+      font-weight: 600;
+      color: #fff;
+      font-size: 16px;
+      margin: 12px 0 8px 0;
+    }
+    .perk-desc {
+      font-size: 14px;
+      color: #999;
+      line-height: 1.6;
+    }
+    @media (max-width: 1024px) {
+      .perks-grid { grid-template-columns: repeat(2, 1fr); gap: 48px 32px; }
+    }
+    @media (max-width: 600px) {
+      .perks-grid { grid-template-columns: 1fr; }
+      .perks-grid { text-align: center; }
+    }
+    
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+    .contact-info {
+      color: #999;
+    }
+    .contact-item {
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 16px;
+    }
+    .contact-icon {
+      font-size: 20px;
+    }
+    .social-links {
+      display: flex;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .social-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-row {
+      display: flex;
+      gap: 20px;
+    }
+    .form-row > * {
+      flex: 1;
+    }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 16px;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+    .contact-form input::placeholder, .contact-form textarea::placeholder {
+      color: #555;
+    }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+      outline: none;
+      border-color: rgba(255,255,255,0.4);
+    }
+    .contact-form select {
+      appearance: none;
+      color: #999;
+    }
+    .contact-form select option {
+      background: #000;
+      color: #fff;
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+    .submit-btn {
+      width: 100%;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      padding: 16px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: opacity 0.3s;
+      margin-top: 8px;
+    }
+    .submit-btn:hover {
+      opacity: 0.9;
+    }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 64px; }
+      .form-row { flex-direction: column; }
+    }
+    
+    /* Footer */
+    #footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 100px 0 40px 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    .footer-brand .logo {
+      font-size: 20px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .footer-tagline {
+      color: #999;
+      font-size: 15px;
+      margin-bottom: 32px;
+      max-width: 280px;
+      line-height: 1.6;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #999;
+      background: rgba(255,255,255,0.05);
+      padding: 6px 12px;
+      border-radius: 980px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #00FF66;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,255,102,0.4);
+    }
+    .footer-col-title {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+    .footer-links {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 16px;
+    }
+    .footer-links a {
+      color: #999;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: #fff;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #555555;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom-links a {
+      color: #555555;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-bottom-links a:hover {
+      color: #999;
+    }
+    .made-in {
+      letter-spacing: 0.05em;
+    }
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 64px 40px; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-bottom-links { justify-content: center; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Apple-Style Navbar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#capabilities">Solutions</a>
+        <a href="#careers">Careers</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-btn">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#products" class="mobile-link">Products</a>
+    <a href="#capabilities" class="mobile-link">Solutions</a>
+    <a href="#careers" class="mobile-link">Careers</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- Section 1: Hero -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Bharti Nexus Technologies</p>
+      <h1 class="hero-headline reveal"><span class="text-gray">Building the</span><br><span class="text-silver">Future of </span><span class="text-glow">AI</span></h1>
+      <p class="hero-subline reveal">Intelligent systems, enterprise software, and next-generation platforms for modern businesses.</p>
+      <div class="hero-buttons reveal">
+        <a href="#products" class="btn-primary">Explore Products</a>
+        <a href="#contact" class="btn-secondary">Contact Us</a>
+      </div>
+    </div>
+    <div class="hero-video-wrapper reveal">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="./hero-video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- Section 2: Stats Bar -->
+  <section id="stats" style="padding-top: 64px; padding-bottom: 64px;">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-value">
+            <span class="stat-number" data-target="98.7">0</span><span class="stat-suffix">%</span>
+          </div>
+          <div class="stat-label">MODEL ACCURACY</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value">
+            <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+          </div>
+          <div class="stat-label">HAPPY CLIENTS</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value">
+            <span class="stat-number" data-target="12">0</span><span class="stat-suffix">ms</span>
+          </div>
+          <div class="stat-label">AVG RESPONSE</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-value">
+            <span class="stat-number" data-target="99.99">0</span><span class="stat-suffix">%</span>
+          </div>
+          <div class="stat-label">UPTIME SLA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Domains -->
+  <section id="domains">
+    <div class="container">
+      <div class="eyebrow reveal">What We Do</div>
+      <h2 class="section-headline reveal">Powering Innovation Across Domains</h2>
+      <div class="domains-wrapper reveal">
+        <div class="domain-pill">🤖 Artificial Intelligence</div>
+        <div class="domain-pill">☁️ Cloud Tech</div>
+        <div class="domain-pill">📊 Data Science</div>
+        <div class="domain-pill">⚙️ Automation</div>
+        <div class="domain-pill">🏢 Enterprise</div>
+        <div class="domain-pill">🔐 Cybersecurity</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Product Ecosystem -->
+  <section id="products">
+    <div class="container">
+      <div class="eyebrow reveal">Product Ecosystem</div>
+      <h2 class="section-headline reveal">Everything Your Business Needs to Scale</h2>
+      <p class="section-subtext reveal">A unified suite of AI-powered products engineered for the next generation of enterprise operations.</p>
+      
+      <div class="products-showcase">
+        <div class="product-row reveal">
+          <div class="product-left">
+            <div class="product-number">01</div>
+            <div class="product-name">Bharti AI</div>
+            <div class="product-tag"><span class="product-tag-dot"></span> Coming Soon</div>
+          </div>
+          <div class="product-right">
+            <p>Generative AI platform with reasoning engines, multimodal capabilities, and enterprise-grade LLM fine-tuning.</p>
+          </div>
+        </div>
+        <div class="product-row reveal">
+          <div class="product-left">
+            <div class="product-number">02</div>
+            <div class="product-name">Nexus Cloud</div>
+            <div class="product-tag"><span class="product-tag-dot"></span> Coming Soon</div>
+          </div>
+          <div class="product-right">
+            <p>Hyper-scalable cloud infrastructure with auto-scaling, global edge delivery, and zero-downtime deployments.</p>
+          </div>
+        </div>
+        <div class="product-row reveal">
+          <div class="product-left">
+            <div class="product-number">03</div>
+            <div class="product-name">Nexus CRM</div>
+            <div class="product-tag"><span class="product-tag-dot"></span> Coming Soon</div>
+          </div>
+          <div class="product-right">
+            <p>AI-driven customer intelligence that predicts churn, automates pipelines, and personalizes customer journeys.</p>
+          </div>
+        </div>
+        <div class="product-row reveal">
+          <div class="product-left">
+            <div class="product-number">04</div>
+            <div class="product-name">Bharti HRMS</div>
+            <div class="product-tag"><span class="product-tag-dot"></span> Coming Soon</div>
+          </div>
+          <div class="product-right">
+            <p>Next-gen human resources with predictive hiring, performance intelligence, and payroll automation.</p>
+          </div>
+        </div>
+        <div class="product-row reveal">
+          <div class="product-left">
+            <div class="product-number">05</div>
+            <div class="product-name">Nexus Workspace</div>
+            <div class="product-tag"><span class="product-tag-dot"></span> Coming Soon</div>
+          </div>
+          <div class="product-right">
+            <p>Unified digital workspace integrating docs, video, projects, and AI assistants seamlessly.</p>
+          </div>
+        </div>
+        <div class="product-row reveal">
+          <div class="product-left">
+            <div class="product-number">06</div>
+            <div class="product-name">Nexus Analytics</div>
+            <div class="product-tag"><span class="product-tag-dot"></span> Coming Soon</div>
+          </div>
+          <div class="product-right">
+            <p>Real-time business intelligence with AI anomaly detection, predictive dashboards, and auto-generated insights.</p>
+          </div>
+        </div>
+        <div class="product-row reveal">
+          <div class="product-left">
+            <div class="product-number">07</div>
+            <div class="product-name">Nexus Security</div>
+            <div class="product-tag"><span class="product-tag-dot"></span> Coming Soon</div>
+          </div>
+          <div class="product-right">
+            <p>Zero-trust cybersecurity with AI threat detection, automated incident response, and compliance management.</p>
+          </div>
+        </div>
+        <div class="product-row reveal">
+          <div class="product-left">
+            <div class="product-number">08</div>
+            <div class="product-name">Bharti Voice AI</div>
+            <div class="product-tag"><span class="product-tag-dot"></span> Coming Soon</div>
+          </div>
+          <div class="product-right">
+            <p>Multilingual conversational AI with emotion recognition, real-time transcription, and voice automation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Core Capabilities -->
+  <section id="capabilities">
+    <div class="container">
+      <div class="eyebrow reveal">Core Capabilities</div>
+      <h2 class="section-headline reveal">Technologies That Define the Future</h2>
+      <div style="height: 40px;"></div>
+      
+      <div class="capabilities-grid">
+        <div class="capability-item reveal">
+          <div class="cap-header">
+            <span class="cap-icon">🤖</span>
+            <span class="cap-title">Artificial Intelligence</span>
+          </div>
+          <p class="cap-desc">State-of-the-art LLMs, vision AI, and reasoning engines trained on enterprise-grade datasets.</p>
+        </div>
+        <div class="capability-item reveal">
+          <div class="cap-header">
+            <span class="cap-icon">📈</span>
+            <span class="cap-title">Machine Learning</span>
+          </div>
+          <p class="cap-desc">Automated ML pipelines with AutoML, federated learning, and continuous model improvement.</p>
+        </div>
+        <div class="capability-item reveal">
+          <div class="cap-header">
+            <span class="cap-icon">⚙️</span>
+            <span class="cap-title">Intelligent Automation</span>
+          </div>
+          <p class="cap-desc">RPA combined with AI to automate complex multi-step workflows, reducing costs by up to 80%.</p>
+        </div>
+        <div class="capability-item reveal">
+          <div class="cap-header">
+            <span class="cap-icon">☁️</span>
+            <span class="cap-title">Cloud Infrastructure</span>
+          </div>
+          <p class="cap-desc">Multi-cloud architecture with 99.99% SLA, global PoPs, and Kubernetes orchestration.</p>
+        </div>
+        <div class="capability-item reveal">
+          <div class="cap-header">
+            <span class="cap-icon">🔐</span>
+            <span class="cap-title">Cybersecurity</span>
+          </div>
+          <p class="cap-desc">Military-grade encryption, behavioral biometrics, AI threat intelligence, and SOC 2 Type II certification.</p>
+        </div>
+        <div class="capability-item reveal">
+          <div class="cap-header">
+            <span class="cap-icon">🗄️</span>
+            <span class="cap-title">Data Intelligence</span>
+          </div>
+          <p class="cap-desc">Unified data lakehouse with real-time streaming, semantic layer, and AI-augmented BI dashboards.</p>
+        </div>
+        <div class="capability-item reveal">
+          <div class="cap-header">
+            <span class="cap-icon">🏢</span>
+            <span class="cap-title">Enterprise Solutions</span>
+          </div>
+          <p class="cap-desc">ERP, SCM, and vertical SaaS built with enterprise-grade reliability and deep customization.</p>
+        </div>
+        <div class="capability-item reveal">
+          <div class="cap-header">
+            <span class="cap-icon">🎙️</span>
+            <span class="cap-title">Voice AI</span>
+          </div>
+          <p class="cap-desc">Ultra-low latency voice interfaces with 97 language support and real-time voice-to-action capabilities.</p>
+        </div>
+        <div class="capability-item reveal">
+          <div class="cap-header">
+            <span class="cap-icon">🌐</span>
+            <span class="cap-title">SaaS Platforms</span>
+          </div>
+          <p class="cap-desc">Multi-tenant SaaS with white-labeling, role-based access, usage-based billing, and integrations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: About / Mission -->
+  <section id="about">
+    <div class="container">
+      <div class="eyebrow reveal">About Us</div>
+      <h2 class="about-headline reveal">We're Building the Intelligence Layer for Global Business</h2>
+      
+      <p class="about-body reveal">
+        Bharti Nexus Technologies was founded with a singular vision: to democratize enterprise AI and make intelligent automation accessible to every business, from ambitious startups to Fortune 500 enterprises.
+      </p>
+      
+      <div class="about-stats reveal">
+        <div class="about-stat">
+          <div class="about-stat-num">50+</div>
+          <div class="about-stat-label">Projects Delivered</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">50+</div>
+          <div class="about-stat-label">Happy Clients</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">15+</div>
+          <div class="about-stat-label">Solutions Built</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">60+</div>
+          <div class="about-stat-label">Core Technologies</div>
+        </div>
+      </div>
+      
+      <blockquote class="mission-quote reveal">
+        "To architect intelligent systems that amplify human potential<br>and reshape how the world does business."
+      </blockquote>
+      
+      <div class="principles-grid">
+        <div class="principle-item reveal">
+          <h4 class="principle-title">1. AI-First Philosophy</h4>
+          <p class="principle-desc">Every product is engineered with AI at its core, not as an afterthought.</p>
+        </div>
+        <div class="principle-item reveal">
+          <h4 class="principle-title">2. Responsible Innovation</h4>
+          <p class="principle-desc">Explainable, fair, and auditable AI with ethics and human oversight built in.</p>
+        </div>
+        <div class="principle-item reveal">
+          <h4 class="principle-title">3. India to the World</h4>
+          <p class="principle-desc">Born in Bharat, built for the globe. The next chapter of India's technology leadership.</p>
+        </div>
+        <div class="principle-item reveal">
+          <h4 class="principle-title">4. Startup Velocity</h4>
+          <p class="principle-desc">Move fast, ship continuously, and iterate relentlessly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Leadership -->
+  <section id="leadership">
+    <div class="container">
+      <div class="eyebrow reveal">Leadership</div>
+      <h2 class="section-headline reveal">Meet Our Visionary Leaders</h2>
+      <div style="height: 40px;"></div>
+      
+      <div class="leaders-grid">
+        <div class="leader-card reveal">
+          <div class="avatar">SC</div>
+          <h3 class="leader-name">Samarth Choudhar</h3>
+          <p class="leader-title">Founder & COO</p>
+          <div class="leader-badge">★ Founder</div>
+          <p class="leader-quote">"Technology should empower every individual and business to achieve what was once thought impossible."</p>
+          <a href="#" class="linkedin-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+        <div class="leader-card reveal">
+          <div class="avatar">GJ</div>
+          <h3 class="leader-name">Ganesh Jawale</h3>
+          <p class="leader-title">Co-Founder & CEO</p>
+          <div class="leader-badge">★ Co-Founder</div>
+          <p class="leader-quote">"Together, we're shaping a new era of technology — intelligent, inclusive, and built to last."</p>
+          <a href="#" class="linkedin-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+        <div class="leader-card reveal">
+          <div class="avatar">RM</div>
+          <h3 class="leader-name">Rohan Malgunde</h3>
+          <p class="leader-title">Co-Founder & Director</p>
+          <div class="leader-badge">★ Co-Founder</div>
+          <p class="leader-quote">"Our vision is to break boundaries and build intelligent solutions that drive unparalleled growth."</p>
+          <a href="#" class="linkedin-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Focus Areas -->
+  <section id="focus">
+    <div class="container">
+      <div class="eyebrow reveal">Our Focus Areas</div>
+      <h2 class="section-headline reveal">What We Specialize In</h2>
+      <div style="height: 40px;"></div>
+      
+      <div class="focus-grid">
+        <div class="focus-item reveal">
+          <span class="focus-icon">🌐</span>
+          <h4 class="focus-title">Web & App Dev</h4>
+          <p class="focus-desc">Custom websites, web apps, and mobile applications built with modern technologies.</p>
+        </div>
+        <div class="focus-item reveal">
+          <span class="focus-icon">🤖</span>
+          <h4 class="focus-title">AI & Automation</h4>
+          <p class="focus-desc">Intelligent automation that streamlines repetitive tasks and boosts productivity.</p>
+        </div>
+        <div class="focus-item reveal">
+          <span class="focus-icon">📊</span>
+          <h4 class="focus-title">CRM & Business Tools</h4>
+          <p class="focus-desc">Customer management systems tailored to your workflow and growth goals.</p>
+        </div>
+        <div class="focus-item reveal">
+          <span class="focus-icon">🎨</span>
+          <h4 class="focus-title">UI/UX Design</h4>
+          <p class="focus-desc">Clean, user-friendly designs that convert visitors into customers.</p>
+        </div>
+        <div class="focus-item reveal">
+          <span class="focus-icon">📈</span>
+          <h4 class="focus-title">Digital Strategy</h4>
+          <p class="focus-desc">From idea to execution — clear roadmaps for your digital journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Careers / Join Us -->
+  <section id="careers">
+    <div class="container">
+      <h2 class="section-headline reveal">Join the Revolution</h2>
+      <p class="section-subtext reveal">We're hiring exceptional talent who want to work on the hardest and most impactful problems in AI & technology.</p>
+      
+      <div class="reveal">
+        <a href="#" class="careers-cta">View Open Roles →</a>
+      </div>
+      
+      <div class="perks-grid">
+        <div class="perk-item reveal">
+          <span class="focus-icon">🧠</span>
+          <h4 class="perk-title">AI/ML Engineers</h4>
+          <p class="perk-desc">Build production AI systems at scale. LLMs, vision, and reinforcement learning.</p>
+        </div>
+        <div class="perk-item reveal">
+          <span class="focus-icon">🎓</span>
+          <h4 class="perk-title">Internship Program</h4>
+          <p class="perk-desc">6-month intensive internships across AI research, engineering, product, and design.</p>
+        </div>
+        <div class="perk-item reveal">
+          <span class="focus-icon">🌍</span>
+          <h4 class="perk-title">Remote-First Culture</h4>
+          <p class="perk-desc">Work from anywhere. Team members in 18+ countries, async-first collaboration.</p>
+        </div>
+        <div class="perk-item reveal">
+          <span class="focus-icon">🚀</span>
+          <h4 class="perk-title">Innovation-Driven</h4>
+          <p class="perk-desc">20% time for passion projects, research budget, conference sponsorships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="eyebrow reveal">Contact Us</div>
+      <h2 class="section-headline reveal">Let's Build Something Extraordinary</h2>
+      <p class="section-subtext reveal">Our enterprise team is standing by to understand your needs and design a solution that delivers results.</p>
+      
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <span>info@bhartinexus.in</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <span>+91 9511798326 / +91 9764685049</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>Pune, Maharashtra, India</span>
+          </div>
+          
+          <div class="social-links">
+            <a href="#">X</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+            <a href="#">YouTube</a>
+          </div>
+        </div>
+        
+        <div class="contact-form reveal">
+          <div class="form-row">
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+          </div>
+          <input type="email" placeholder="Work Email">
+          <input type="text" placeholder="Company Name">
+          <select>
+            <option value="" disabled selected>I'm interested in...</option>
+            <option value="ai">AI Solutions</option>
+            <option value="cloud">Cloud Tech</option>
+            <option value="dev">Web/App Development</option>
+            <option value="other">Other</option>
+          </select>
+          <textarea placeholder="Message"></textarea>
+          <button class="submit-btn">Send Message →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 11: Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand reveal">
+          <span class="logo">Bharti Nexus</span>
+          <p class="footer-tagline">Building next-generation AI systems and digital platforms.</p>
+          <div class="status-badge">
+            <div class="status-dot"></div>
+            All Systems Operational
+          </div>
+        </div>
+        
+        <div class="footer-col reveal" style="transition-delay: 0.1s;">
+          <h4 class="footer-col-title">Products</h4>
+          <ul class="footer-links">
+            <li><a href="#">Bharti AI</a></li>
+            <li><a href="#">Nexus Cloud</a></li>
+            <li><a href="#">Nexus CRM</a></li>
+            <li><a href="#">Bharti HRMS</a></li>
+            <li><a href="#">Nexus Analytics</a></li>
+            <li><a href="#">Nexus Security</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col reveal" style="transition-delay: 0.2s;">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="#">For Enterprise</a></li>
+            <li><a href="#">For Startups</a></li>
+            <li><a href="#">For Government</a></li>
+            <li><a href="#">For Healthcare</a></li>
+            <li><a href="#">For Finance</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col reveal" style="transition-delay: 0.3s;">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom reveal">
+        <div>© 2025 Bharti Nexus Technologies. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+        <div class="made-in">DESIGNED & BUILT WITH ♥ IN PUNE, INDIA</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // 1. Scroll-triggered reveals
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optional: stop observing once revealed
+          // observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+    
+    // Add staggered delays for grids
+    document.querySelectorAll('.products-grid .product-card').forEach((card, index) => {
+      card.style.transitionDelay = `${index * 0.1}s`;
+    });
+    document.querySelectorAll('.capabilities-grid .capability-item').forEach((item, index) => {
+      item.style.transitionDelay = `${index * 0.1}s`;
+    });
+    document.querySelectorAll('.leaders-grid .leader-card').forEach((card, index) => {
+      card.style.transitionDelay = `${index * 0.1}s`;
+    });
+    document.querySelectorAll('.focus-grid .focus-item').forEach((item, index) => {
+      item.style.transitionDelay = `${index * 0.1}s`;
+    });
+    document.querySelectorAll('.perks-grid .perk-item').forEach((item, index) => {
+      item.style.transitionDelay = `${index * 0.1}s`;
+    });
+    
+    // 2. Navbar Background on Scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // 3. Number Counter Animation
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const stats = entry.target.querySelectorAll('.stat-number');
+          stats.forEach(stat => {
+            const target = parseFloat(stat.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const start = performance.now();
+            
+            function updateCounter(currentTime) {
+              const elapsed = currentTime - start;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              // Easing out quint
+              const easeOut = 1 - Math.pow(1 - progress, 5);
+              
+              const currentVal = target * easeOut;
+              
+              // Formatting: keep 1 decimal if target has decimal, else int
+              if (target % 1 !== 0) {
+                stat.innerText = currentVal.toFixed(1);
+              } else {
+                stat.innerText = Math.floor(currentVal);
+              }
+              
+              if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+              } else {
+                stat.innerText = target;
+              }
+            }
+            
+            requestAnimationFrame(updateCounter);
+            
+            // Only animate once
+            stat.classList.remove('stat-number');
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    const statsSection = document.getElementById('stats');
+    if (statsSection) {
+      statsObserver.observe(statsSection);
+    }
+    
+    // 4. Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+    
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+  </script>
+</body>
+</html>
