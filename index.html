@@ -85,6 +85,92 @@
       transform: translateY(0);
     }
     
+    /* Loading Screen */
+    .loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+    }
+    .loader-container.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-logo {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      background: linear-gradient(180deg, #ffffff 0%, #a6a6a6 50%, #595959 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: loaderFadeIn 0.8s ease-out forwards;
+    }
+    .loader-text {
+      font-size: 14px;
+      color: #86868b;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: loaderFadeIn 0.8s ease-out 0.3s forwards;
+    }
+    @keyframes loaderFadeIn {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Floating Background Elements */
+    .bg-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+      animation: float 20s infinite ease-in-out alternate;
+    }
+    .bg-orb-1 {
+      width: 600px; height: 600px;
+      top: -10%; left: -10%;
+      animation-duration: 25s;
+    }
+    .bg-orb-2 {
+      width: 800px; height: 800px;
+      bottom: -20%; right: -10%;
+      animation-duration: 30s;
+      animation-delay: -5s;
+    }
+    .bg-grid {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 100px 100px;
+      mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 80%);
+    }
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(30px, 50px) scale(1.1); }
+    }
+    
     /* Apple-Style Global Navbar */
     #navbar {
       position: fixed;
@@ -178,6 +264,18 @@
     #hero {
       padding-top: 100px;
       padding-bottom: 40px;
+      position: relative;
+    }
+    .hero-glow {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+      z-index: -1;
+      pointer-events: none;
     }
     .hero-content {
       display: flex; 
@@ -483,33 +581,49 @@
       .product-right p { text-align: left; max-width: 100%; font-size: 15px; }
     }
     
-    /* Core Capabilities */
+    /* Core Capabilities (Service Cards) */
     .capabilities-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 48px 32px;
+      gap: 32px;
     }
     .capability-item {
       display: flex;
       flex-direction: column;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 32px;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .capability-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.02);
     }
     .cap-header {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
     .cap-icon {
-      font-size: 24px;
+      font-size: 28px;
+      transition: transform 0.3s ease;
+    }
+    .capability-item:hover .cap-icon {
+      transform: scale(1.1) rotate(5deg);
     }
     .cap-title {
       color: #fff;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
     }
     .cap-desc {
-      color: #666666;
-      font-size: 14px;
+      color: #86868b;
+      font-size: 15px;
       line-height: 1.6;
     }
     @media (max-width: 1024px) {
@@ -517,6 +631,147 @@
     }
     @media (max-width: 600px) {
       .capabilities-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Featured Projects */
+    #projects {
+      background: linear-gradient(180deg, #000000 0%, #050505 100%);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+    .project-card {
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s ease, border-color 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .project-image-wrapper {
+      width: 100%;
+      height: 240px;
+      background: #111;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-image-placeholder {
+      width: 80%;
+      height: 80%;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.3);
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .project-info {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .project-category {
+      font-size: 12px;
+      font-weight: 500;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .project-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .project-desc {
+      font-size: 15px;
+      color: #86868b;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .project-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.3s ease;
+    }
+    .project-link:hover {
+      gap: 12px;
+    }
+    @media (max-width: 768px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Why Choose Us */
+    #why-us {
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .feature-card:hover {
+      background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
+      border-color: rgba(255,255,255,0.15);
+    }
+    .feature-icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 16px;
+    }
+    .feature-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+    }
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
     }
     
     /* About Section */
@@ -954,12 +1209,24 @@
       .footer-grid { grid-template-columns: 1fr; gap: 48px; }
       .footer-bottom { flex-direction: column; text-align: center; }
       .footer-bottom-links { justify-content: center; flex-wrap: wrap; }
-    }
-  </style>
+</style>
 </head>
 <body>
 
-  <!-- Apple-Style Navbar -->
+  <!-- Loading Screen -->
+  <div class="loader-container" id="loader">
+    <div class="loader-logo">BN</div>
+    <div class="loader-text">Bharti Nexus Technologies</div>
+  </div>
+
+  <!-- Floating Background Elements -->
+  <div class="bg-elements">
+    <div class="bg-grid"></div>
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+  </div>
+
+  <!-- Apple-Style Global Navbar -->
   <nav id="navbar">
     <div class="nav-container">
       <div class="nav-links">
@@ -987,6 +1254,7 @@
 
   <!-- Section 1: Hero -->
   <section id="hero">
+    <div class="hero-glow"></div>
     <div class="hero-content">
       <p class="hero-eyebrow reveal">Bharti Nexus Technologies</p>
       <h1 class="hero-headline reveal"><span class="text-gray">Building the</span><br><span class="text-silver">Future of </span><span class="text-glow">AI</span></h1>
@@ -1143,6 +1411,40 @@
     </div>
   </section>
 
+  <!-- Section 4.5: Featured Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="eyebrow reveal">Featured Work</div>
+      <h2 class="section-headline reveal">Engineering Excellence in Action</h2>
+      <div style="height: 40px;"></div>
+      
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-image-wrapper">
+            <div class="project-image-placeholder">UI Mockup Placeholder</div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Enterprise Platform</div>
+            <h3 class="project-title">AI Knowledge Graph</h3>
+            <p class="project-desc">A semantic search and knowledge retrieval system built for a Fortune 500 legal firm, reducing document processing time by 85%.</p>
+            <a href="#" class="project-link">View Case Study <span>→</span></a>
+          </div>
+        </div>
+        <div class="project-card reveal" style="transition-delay: 0.1s;">
+          <div class="project-image-wrapper">
+            <div class="project-image-placeholder">Mobile App Placeholder</div>
+          </div>
+          <div class="project-info">
+            <div class="project-category">Mobile & Cloud</div>
+            <h3 class="project-title">Fintech Cloud Dashboard</h3>
+            <p class="project-desc">High-performance real-time analytics dashboard with sub-50ms latency, handling millions of daily transactions.</p>
+            <a href="#" class="project-link">View Case Study <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Section 5: Core Capabilities -->
   <section id="capabilities">
     <div class="container">
@@ -1267,6 +1569,48 @@
         <div class="principle-item reveal">
           <h4 class="principle-title">4. Startup Velocity</h4>
           <p class="principle-desc">Move fast, ship continuously, and iterate relentlessly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6.5: Why Choose Us -->
+  <section id="why-us">
+    <div class="container">
+      <div class="eyebrow reveal">The Bharti Nexus Advantage</div>
+      <h2 class="section-headline reveal">Why Choose Bharti Nexus?</h2>
+      <div style="height: 40px;"></div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">✓</div>
+          <h3 class="feature-title">AI-First Development</h3>
+          <p class="cap-desc">We build solutions natively integrated with modern AI, giving you a distinct competitive edge.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">✓</div>
+          <h3 class="feature-title">Modern Technology Stack</h3>
+          <p class="cap-desc">Utilizing the latest frameworks and cloud architectures for optimal performance and scale.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">✓</div>
+          <h3 class="feature-title">Fast & Scalable Solutions</h3>
+          <p class="cap-desc">Engineered to handle massive workloads without compromising on speed or reliability.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">✓</div>
+          <h3 class="feature-title">Custom Software Development</h3>
+          <p class="cap-desc">Tailored architectures that fit your specific business requirements perfectly.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">✓</div>
+          <h3 class="feature-title">Security Focused Architecture</h3>
+          <p class="cap-desc">Enterprise-grade security protocols, zero-trust models, and continuous monitoring.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper">✓</div>
+          <h3 class="feature-title">Made in India Innovation</h3>
+          <p class="cap-desc">World-class engineering talent delivering globally competitive technological solutions.</p>
         </div>
       </div>
     </div>
@@ -1498,6 +1842,20 @@
 
   <!-- Scripts -->
   <script>
+    // 0. Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        if (loader) {
+          loader.classList.add('hidden');
+          // Optional: remove from DOM after transition
+          setTimeout(() => {
+            loader.style.display = 'none';
+          }, 800);
+        }
+      }, 500); // 500ms delay to ensure the loader animation is visible
+    });
+
     // 1. Scroll-triggered reveals
     const observerOptions = {
       root: null,
