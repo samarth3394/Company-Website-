@@ -634,58 +634,38 @@
     /* =============================================
        CORE CAPABILITIES (Service Cards)
        ============================================= */
-    .capabilities-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .capability-item {
+    .compact-capabilities {
       display: flex;
-      flex-direction: column;
-      padding: 24px 16px;
-      border-left: 1px solid var(--border-1);
-      transition: transform var(--transition-fast), border-color var(--transition-fast);
-    }
-    .capability-item:hover {
-      transform: translateX(4px);
-      border-left-color: var(--accent);
-    }
-    .cap-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
-    .cap-icon {
-      font-size: 24px;
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: center;
-      background: var(--surface-3);
-      border-radius: var(--radius-md);
-      transition: transform var(--transition-fast), background var(--transition-fast);
+      gap: 12px;
+      max-width: 900px;
+      margin: 0 auto;
     }
-    .capability-item:hover .cap-icon {
-      transform: scale(1.1);
-      background: var(--accent-dim);
-    }
-    .cap-title {
+    .cap-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      background: var(--surface-1);
+      border: 1px solid var(--border-1);
+      border-radius: 980px;
+      font-size: 15px;
+      font-weight: 500;
       color: var(--text-primary);
-      font-size: 16px;
-      font-weight: 600;
+      transition: all var(--transition-fast);
+      cursor: default;
     }
-    .cap-desc {
-      color: var(--text-secondary);
-      font-size: 14px;
-      line-height: 1.65;
-    }
-    @media (max-width: 1024px) {
-      .capabilities-grid { grid-template-columns: repeat(2, 1fr); }
+    .cap-pill:hover {
+      background: var(--surface-2);
+      border-color: var(--border-2);
+      transform: translateY(-2px);
     }
     @media (max-width: 600px) {
-      .capabilities-grid { grid-template-columns: 1fr; }
+      .cap-pill {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
     }
 
     /* =============================================
@@ -1382,70 +1362,16 @@
       <h2 class="section-headline reveal">Technologies That Define the Future</h2>
       <p class="section-subtext reveal">Deep expertise across the full spectrum of modern technology.</p>
       
-      <div class="capabilities-grid">
-        <div class="capability-item reveal">
-          <div class="cap-header">
-            <span class="cap-icon">🤖</span>
-            <span class="cap-title">Artificial Intelligence</span>
-          </div>
-          <p class="cap-desc">State-of-the-art LLMs, vision AI, and reasoning engines trained on enterprise-grade datasets.</p>
-        </div>
-        <div class="capability-item reveal">
-          <div class="cap-header">
-            <span class="cap-icon">📈</span>
-            <span class="cap-title">Machine Learning</span>
-          </div>
-          <p class="cap-desc">Automated ML pipelines with AutoML, federated learning, and continuous model improvement.</p>
-        </div>
-        <div class="capability-item reveal">
-          <div class="cap-header">
-            <span class="cap-icon">⚙️</span>
-            <span class="cap-title">Intelligent Automation</span>
-          </div>
-          <p class="cap-desc">RPA combined with AI to automate complex multi-step workflows, reducing costs by up to 80%.</p>
-        </div>
-        <div class="capability-item reveal">
-          <div class="cap-header">
-            <span class="cap-icon">☁️</span>
-            <span class="cap-title">Cloud Infrastructure</span>
-          </div>
-          <p class="cap-desc">Multi-cloud architecture with 99.99% SLA, global PoPs, and Kubernetes orchestration.</p>
-        </div>
-        <div class="capability-item reveal">
-          <div class="cap-header">
-            <span class="cap-icon">🔐</span>
-            <span class="cap-title">Cybersecurity</span>
-          </div>
-          <p class="cap-desc">Military-grade encryption, behavioral biometrics, AI threat intelligence, and SOC 2 Type II certification.</p>
-        </div>
-        <div class="capability-item reveal">
-          <div class="cap-header">
-            <span class="cap-icon">🗄️</span>
-            <span class="cap-title">Data Intelligence</span>
-          </div>
-          <p class="cap-desc">Unified data lakehouse with real-time streaming, semantic layer, and AI-augmented BI dashboards.</p>
-        </div>
-        <div class="capability-item reveal">
-          <div class="cap-header">
-            <span class="cap-icon">🏢</span>
-            <span class="cap-title">Enterprise Solutions</span>
-          </div>
-          <p class="cap-desc">ERP, SCM, and vertical SaaS built with enterprise-grade reliability and deep customization.</p>
-        </div>
-        <div class="capability-item reveal">
-          <div class="cap-header">
-            <span class="cap-icon">🎙️</span>
-            <span class="cap-title">Voice AI</span>
-          </div>
-          <p class="cap-desc">Ultra-low latency voice interfaces with 97 language support and real-time voice-to-action capabilities.</p>
-        </div>
-        <div class="capability-item reveal">
-          <div class="cap-header">
-            <span class="cap-icon">🌐</span>
-            <span class="cap-title">SaaS Platforms</span>
-          </div>
-          <p class="cap-desc">Multi-tenant SaaS with white-labeling, role-based access, usage-based billing, and integrations.</p>
-        </div>
+      <div class="compact-capabilities reveal">
+        <span class="cap-pill">🤖 Artificial Intelligence</span>
+        <span class="cap-pill">📈 Machine Learning</span>
+        <span class="cap-pill">⚙️ Intelligent Automation</span>
+        <span class="cap-pill">☁️ Cloud Infrastructure</span>
+        <span class="cap-pill">🔐 Cybersecurity</span>
+        <span class="cap-pill">🗄️ Data Intelligence</span>
+        <span class="cap-pill">🏢 Enterprise Solutions</span>
+        <span class="cap-pill">🎙️ Voice AI</span>
+        <span class="cap-pill">🌐 SaaS Platforms</span>
       </div>
     </div>
   </section>
