@@ -656,10 +656,21 @@
       transition: all var(--transition-fast);
       cursor: default;
     }
+    .cap-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--text-tertiary);
+      transition: all var(--transition-fast);
+    }
     .cap-pill:hover {
       background: var(--surface-2);
       border-color: var(--border-2);
       transform: translateY(-2px);
+    }
+    .cap-pill:hover .cap-dot {
+      background: #fff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
     @media (max-width: 600px) {
       .cap-pill {
@@ -1363,15 +1374,15 @@
       <p class="section-subtext reveal">Deep expertise across the full spectrum of modern technology.</p>
       
       <div class="compact-capabilities reveal">
-        <span class="cap-pill">🤖 Artificial Intelligence</span>
-        <span class="cap-pill">📈 Machine Learning</span>
-        <span class="cap-pill">⚙️ Intelligent Automation</span>
-        <span class="cap-pill">☁️ Cloud Infrastructure</span>
-        <span class="cap-pill">🔐 Cybersecurity</span>
-        <span class="cap-pill">🗄️ Data Intelligence</span>
-        <span class="cap-pill">🏢 Enterprise Solutions</span>
-        <span class="cap-pill">🎙️ Voice AI</span>
-        <span class="cap-pill">🌐 SaaS Platforms</span>
+        <span class="cap-pill"><span class="cap-dot"></span> Artificial Intelligence</span>
+        <span class="cap-pill"><span class="cap-dot"></span> Machine Learning</span>
+        <span class="cap-pill"><span class="cap-dot"></span> Intelligent Automation</span>
+        <span class="cap-pill"><span class="cap-dot"></span> Cloud Infrastructure</span>
+        <span class="cap-pill"><span class="cap-dot"></span> Cybersecurity</span>
+        <span class="cap-pill"><span class="cap-dot"></span> Data Intelligence</span>
+        <span class="cap-pill"><span class="cap-dot"></span> Enterprise Solutions</span>
+        <span class="cap-pill"><span class="cap-dot"></span> Voice AI</span>
+        <span class="cap-pill"><span class="cap-dot"></span> SaaS Platforms</span>
       </div>
     </div>
   </section>
