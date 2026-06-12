@@ -6,18 +6,15 @@
   <title>Bharti Nexus Technologies | Building the Future of AI</title>
   <meta name="description" content="Intelligent systems, enterprise software, and next-generation platforms for modern businesses.">
   
-  <!-- Google Fonts: Inter -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
-    /* =============================================
-       DESIGN SYSTEM — Bharti Nexus Technologies
-       Premium Dark AI Theme
-       ============================================= */
+    
 
-    /* CSS Reset */
+    
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -31,7 +28,7 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Design Tokens */
+    
     :root {
       --accent: #ffffff;
       --accent-dim: rgba(255, 255, 255, 0.08);
@@ -54,7 +51,7 @@
       --transition-spring: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    /* Layout */
+    
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -68,7 +65,7 @@
       section { padding: 30px 0; }
     }
 
-    /* Typography */
+    
     .eyebrow {
       font-size: 12px;
       font-weight: 600;
@@ -96,9 +93,7 @@
       line-height: 1.7;
     }
 
-    /* =============================================
-       SCROLL ANIMATIONS
-       ============================================= */
+    
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -120,9 +115,7 @@
       transform: scale(1) translateY(0);
     }
 
-    /* =============================================
-       LOADING SCREEN
-       ============================================= */
+    
     .loader-container {
       position: fixed;
       top: 0; left: 0;
@@ -180,9 +173,7 @@
       50% { transform: scale(1.2); opacity: 0.7; }
     }
 
-    /* =============================================
-       PARTICLE CANVAS
-       ============================================= */
+    
     #particle-canvas {
       position: fixed;
       top: 0; left: 0;
@@ -191,9 +182,7 @@
       pointer-events: none;
     }
 
-    /* =============================================
-       NAVBAR
-       ============================================= */
+    
     #navbar {
       position: fixed;
       top: 0; left: 0;
@@ -250,7 +239,7 @@
     }
     .nav-links a:hover { color: #fff; }
 
-    /* Mobile Menu */
+    
     .mobile-menu-btn {
       display: none;
       background: none;
@@ -297,9 +286,7 @@
       .mobile-menu-btn { display: block; }
     }
 
-    /* =============================================
-       HERO SECTION
-       ============================================= */
+    
     #hero {
       min-height: 100vh;
       display: flex;
@@ -387,7 +374,7 @@
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* Buttons */
+    
     .btn-primary {
       padding: 14px 32px;
       background: #fff;
@@ -425,7 +412,7 @@
       .btn-primary, .btn-secondary { width: 100%; text-align: center; }
     }
 
-    /* Hero Video */
+    
     .hero-video-wrapper {
       position: relative;
       width: 80%;
@@ -453,9 +440,7 @@
       object-fit: cover;
     }
 
-    /* =============================================
-       STATS SECTION
-       ============================================= */
+    
     #stats {
       padding: 60px 0;
       border-bottom: 1px solid var(--border-1);
@@ -512,9 +497,7 @@
       .stat-number { font-size: 36px; }
     }
 
-    /* =============================================
-       DOMAINS SECTION
-       ============================================= */
+    
     .domains-wrapper {
       display: flex;
       flex-wrap: wrap;
@@ -558,9 +541,7 @@
       }
     }
 
-    /* =============================================
-       PRODUCT ECOSYSTEM
-       ============================================= */
+    
     .products-showcase {
       display: flex;
       flex-direction: column;
@@ -676,9 +657,7 @@
       animation-duration: 12s;
     }
 
-    /* =============================================
-       CORE CAPABILITIES (Service Cards)
-       ============================================= */
+    
     .compact-capabilities {
       display: flex;
       flex-wrap: wrap;
@@ -733,9 +712,7 @@
       }
     }
 
-    /* =============================================
-       ABOUT SECTION
-       ============================================= */
+    
     #about {
       border-top: 1px solid var(--border-1);
       border-bottom: 1px solid var(--border-1);
@@ -823,9 +800,7 @@
       .mission-quote { font-size: 20px; }
     }
 
-    /* =============================================
-       WHY CHOOSE US
-       ============================================= */
+    
     #why-us {
       border-top: 1px solid var(--border-1);
     }
@@ -878,9 +853,7 @@
       .features-grid { grid-template-columns: 1fr; }
     }
 
-    /* =============================================
-       LEADERSHIP
-       ============================================= */
+    
     .leaders-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -955,9 +928,7 @@
       .leaders-grid { grid-template-columns: 1fr; }
     }
 
-    /* =============================================
-       FOCUS AREAS
-       ============================================= */
+    
     .focus-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -996,9 +967,7 @@
       .focus-item:last-child { grid-column: auto; }
     }
 
-    /* =============================================
-       CAREERS
-       ============================================= */
+    
     #careers {
       border-top: 1px solid var(--border-1);
       border-bottom: 1px solid var(--border-1);
@@ -1055,9 +1024,7 @@
       .perks-grid { grid-template-columns: 1fr; text-align: center; }
     }
 
-    /* =============================================
-       CONTACT
-       ============================================= */
+    
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1151,9 +1118,7 @@
       .form-row { flex-direction: column; gap: 16px; }
     }
 
-    /* =============================================
-       FOOTER
-       ============================================= */
+    
     #footer {
       border-top: 1px solid var(--border-1);
       padding: 80px 0 40px 0;
@@ -1252,16 +1217,16 @@
 </head>
 <body>
 
-  <!-- Loading Screen -->
+  
   <div class="loader-container" id="loader">
     <div class="loader-glow"></div>
     <div class="loader-logo">Bharti Nexus Technologies</div>
   </div>
 
-  <!-- Particle Canvas -->
+  
   <canvas id="particle-canvas"></canvas>
 
-  <!-- Navbar -->
+  
   <nav id="navbar">
     <div class="nav-container">
       <a href="#" class="nav-brand">
@@ -1282,7 +1247,7 @@
     </div>
   </nav>
 
-  <!-- Mobile Menu Overlay -->
+  
   <div class="mobile-menu" id="mobile-menu">
     <a href="about.html" class="mobile-link">Leadership</a>
     <a href="#products" class="mobile-link">Products</a>
@@ -1291,7 +1256,7 @@
     <a href="#contact" class="mobile-link">Contact</a>
   </div>
 
-  <!-- Hero Section -->
+  
   <section id="hero">
     <div class="hero-glow"></div>
     <div class="hero-content">
@@ -1310,7 +1275,7 @@
     </div>
   </section>
 
-  <!-- Stats Bar -->
+  
   <section id="stats" style="padding-top: 60px; padding-bottom: 60px;">
     <div class="container">
       <div class="stats-grid">
@@ -1342,7 +1307,7 @@
     </div>
   </section>
 
-  <!-- Domains -->
+  
   <section id="domains" style="position: relative; overflow: hidden;">
     <div class="floating-orb orb-1" style="width: 250px; height: 250px; top: -50px; right: 10%; left: auto;"></div>
     <div class="container" style="position: relative; z-index: 1;">
@@ -1359,7 +1324,7 @@
     </div>
   </section>
 
-  <!-- Product Ecosystem -->
+  
   <section id="products" style="position: relative; overflow: hidden;">
     <div class="floating-orb orb-1"></div>
     <div class="floating-orb orb-2"></div>
@@ -1423,7 +1388,7 @@
     </div>
   </section>
 
-  <!-- Core Capabilities -->
+  
   <section id="capabilities" style="position: relative; overflow: hidden;">
     <div class="floating-orb orb-2" style="top: 0; right: -50px; left: auto; bottom: auto; background: radial-gradient(circle, rgba(138,43,226,0.2) 0%, transparent 70%);"></div>
     <div class="container" style="position: relative; z-index: 1;">
@@ -1445,7 +1410,7 @@
     </div>
   </section>
 
-  <!-- About / Mission -->
+  
   <section id="about">
     <div class="container">
       <div class="eyebrow reveal">About Us</div>
@@ -1463,7 +1428,7 @@
     </div>
   </section>
 
-  <!-- Careers -->
+  
   <section id="careers">
     <div class="container">
       <h2 class="section-headline reveal">Join the Revolution</h2>
@@ -1498,7 +1463,7 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  
   <section id="contact">
     <div class="container">
       <div class="eyebrow reveal">Contact Us</div>
@@ -1548,7 +1513,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  
   <footer id="footer">
     <div class="container">
       <div class="footer-grid">
@@ -1606,7 +1571,7 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  
   <script>
     // =============================================
     // 0. LOADING SCREEN
