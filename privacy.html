@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Bharti Nexus Technologies</title>
+  <meta name="description" content="Privacy Policy for Bharti Nexus Technologies. Learn how we collect, use, and protect your personal information.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #000000;
+      color: #FFFFFF;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :root {
+      --accent: #ffffff;
+      --accent-dim: rgba(255, 255, 255, 0.08);
+      --surface-1: rgba(255,255,255,0.02);
+      --surface-2: rgba(255,255,255,0.04);
+      --surface-3: rgba(255,255,255,0.06);
+      --border-1: rgba(255,255,255,0.06);
+      --border-2: rgba(255,255,255,0.1);
+      --border-3: rgba(255,255,255,0.18);
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-tertiary: #71717a;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 56px;
+      z-index: 1000;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border-1);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.03em;
+    }
+    .nav-logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .hamburger-line {
+      width: 20px;
+      height: 1.5px;
+      background: #fff;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.98);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+    }
+
+    /* Hero Banner */
+    .page-hero {
+      padding: 160px 0 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+    }
+    .page-hero .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 20px;
+    }
+    .page-hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #d4d4d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .page-hero p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .last-updated {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-top: 16px;
+    }
+
+    /* Content */
+    .legal-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 120px 24px;
+    }
+    .legal-section {
+      margin-bottom: 48px;
+      padding: 32px;
+      background: var(--surface-1);
+      border: 1px solid var(--border-1);
+      border-radius: var(--radius-lg);
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+    }
+    .legal-section:hover {
+      border-color: var(--border-2);
+      background: var(--surface-2);
+    }
+    .legal-section h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--surface-3);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+    .legal-section p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.8;
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .legal-section ul li {
+      margin-bottom: 8px;
+    }
+    .legal-section strong {
+      color: #fff;
+    }
+
+    /* Footer */
+    #footer {
+      border-top: 1px solid var(--border-1);
+      padding: 80px 0 40px 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+      gap: 40px;
+      margin-bottom: 64px;
+    }
+    .footer-brand .logo {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: block;
+      color: #fff;
+    }
+    .footer-tagline {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 28px;
+      max-width: 280px;
+      line-height: 1.7;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: var(--surface-1);
+      padding: 6px 14px;
+      border-radius: 980px;
+      border: 1px solid var(--border-1);
+      font-weight: 500;
+    }
+    .status-dot {
+      width: 7px; height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+    }
+    .footer-col-title {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color var(--transition-fast);
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid var(--border-1);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-tertiary);
+      font-size: 12px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom-links a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+      font-size: 12px;
+    }
+    .footer-bottom-links a:hover { color: var(--text-secondary); }
+    .made-in {
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px 40px; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-bottom-links { justify-content: center; flex-wrap: wrap; }
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .fade-in-delay-1 { animation-delay: 0.1s; }
+    .fade-in-delay-2 { animation-delay: 0.2s; }
+    .fade-in-delay-3 { animation-delay: 0.3s; }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.png" alt="Bharti Nexus Logo" class="nav-logo">
+        Bharti Nexus
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#capabilities">Solutions</a>
+        <a href="index.html#careers">Careers</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-btn">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#products" class="mobile-link">Products</a>
+    <a href="index.html#capabilities" class="mobile-link">Solutions</a>
+    <a href="index.html#careers" class="mobile-link">Careers</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow fade-in">Legal</p>
+      <h1 class="fade-in fade-in-delay-1">Privacy Policy</h1>
+      <p class="fade-in fade-in-delay-2">Your privacy is important to us. This policy explains how Bharti Nexus Technologies collects, uses, and protects your information.</p>
+      <p class="last-updated fade-in fade-in-delay-3">Last Updated: June 13, 2025</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="legal-content">
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">1</span> Introduction</h2>
+      <p>Bharti Nexus Technologies ("we", "our", "us") is committed to protecting the privacy of our users, clients, and website visitors. This Privacy Policy describes how we collect, use, disclose, and safeguard your personal information when you visit our website, use our products, or engage with our services.</p>
+      <p>By accessing our website or using our services, you agree to the terms outlined in this Privacy Policy. If you do not agree, please discontinue use of our services immediately.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">2</span> Information We Collect</h2>
+      <p>We may collect the following types of information:</p>
+      <ul>
+        <li><strong>Personal Information:</strong> Name, email address, phone number, company name, and job title when you fill out contact forms or subscribe to our services.</li>
+        <li><strong>Usage Data:</strong> Information about how you interact with our website, including IP address, browser type, operating system, referring URLs, pages visited, and timestamps.</li>
+        <li><strong>Cookies & Tracking Technologies:</strong> We use cookies, web beacons, and similar technologies to enhance your experience and gather analytics data.</li>
+        <li><strong>Communication Data:</strong> Records of correspondence when you contact us via email, phone, WhatsApp, or contact forms.</li>
+        <li><strong>Business Data:</strong> Information provided during project discussions, proposals, and service agreements.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">3</span> How We Use Your Information</h2>
+      <p>We use the information collected for the following purposes:</p>
+      <ul>
+        <li>To provide, maintain, and improve our products and services</li>
+        <li>To communicate with you regarding inquiries, projects, and support</li>
+        <li>To personalize your experience on our website</li>
+        <li>To send you updates, newsletters, and marketing communications (with your consent)</li>
+        <li>To analyze website usage and optimize performance</li>
+        <li>To comply with legal obligations and enforce our terms</li>
+        <li>To detect, prevent, and address technical issues and security threats</li>
+      </ul>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">4</span> Data Sharing & Disclosure</h2>
+      <p>We do not sell your personal information to third parties. We may share your data in the following circumstances:</p>
+      <ul>
+        <li><strong>Service Providers:</strong> Trusted third-party vendors who assist us in operating our business (hosting, analytics, payment processing).</li>
+        <li><strong>Legal Requirements:</strong> When required by law, regulation, or legal proceedings.</li>
+        <li><strong>Business Transfers:</strong> In connection with mergers, acquisitions, or asset sales.</li>
+        <li><strong>With Your Consent:</strong> When you explicitly authorize us to share your information.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">5</span> Data Security</h2>
+      <p>We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+      <ul>
+        <li>SSL/TLS encryption for data in transit</li>
+        <li>Encrypted storage for sensitive data at rest</li>
+        <li>Regular security audits and vulnerability assessments</li>
+        <li>Access controls and authentication mechanisms</li>
+        <li>Employee training on data privacy best practices</li>
+      </ul>
+      <p>However, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">6</span> Cookies Policy</h2>
+      <p>Our website uses cookies to improve functionality and user experience. Types of cookies we use include:</p>
+      <ul>
+        <li><strong>Essential Cookies:</strong> Required for the website to function properly.</li>
+        <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website.</li>
+        <li><strong>Preference Cookies:</strong> Remember your settings and preferences.</li>
+      </ul>
+      <p>You can control cookie settings through your browser preferences. Disabling cookies may affect some website functionality.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">7</span> Your Rights</h2>
+      <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+        <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data.</li>
+        <li><strong>Deletion:</strong> Request deletion of your personal data, subject to legal obligations.</li>
+        <li><strong>Objection:</strong> Object to the processing of your personal data for specific purposes.</li>
+        <li><strong>Data Portability:</strong> Request your data in a structured, machine-readable format.</li>
+        <li><strong>Withdraw Consent:</strong> Withdraw previously given consent at any time.</li>
+      </ul>
+      <p>To exercise these rights, please contact us at <strong>info@bhartinexus.in</strong>.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">8</span> Third-Party Links</h2>
+      <p>Our website may contain links to third-party websites and services. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party services you interact with.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">9</span> Children's Privacy</h2>
+      <p>Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected data from a child, we will take steps to delete it promptly.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">10</span> Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this policy periodically. Continued use of our services after changes constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">11</span> Contact Us</h2>
+      <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> info@bhartinexus.in</li>
+        <li><strong>Phone:</strong> +91 9511798326 / +91 9764685049</li>
+        <li><strong>Address:</strong> Pune, Maharashtra, India</li>
+        <li><strong>WhatsApp:</strong> +91 9511798326</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo">Bharti Nexus</span>
+          <p class="footer-tagline">Building next-generation AI systems and digital platforms.</p>
+          <div class="status-badge">
+            <div class="status-dot"></div>
+            All Systems Operational
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Products</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#products">Bharti AI</a></li>
+            <li><a href="index.html#products">Nexus Cloud</a></li>
+            <li><a href="index.html#products">Nexus CRM</a></li>
+            <li><a href="index.html#products">Bharti HRMS</a></li>
+            <li><a href="index.html#products">Nexus Analytics</a></li>
+            <li><a href="index.html#products">Nexus Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#capabilities">For Enterprise</a></li>
+            <li><a href="index.html#capabilities">For Startups</a></li>
+            <li><a href="index.html#capabilities">For Government</a></li>
+            <li><a href="index.html#capabilities">For Healthcare</a></li>
+            <li><a href="index.html#capabilities">For Finance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#careers">Careers</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 Bharti Nexus Technologies. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="made-in">DESIGNED & BUILT WITH ♥ IN PUNE, INDIA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobile-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => { mobileMenu.classList.remove('open'); });
+    });
+
+    // Scroll-triggered fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.legal-section').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

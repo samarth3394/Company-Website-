@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | Bharti Nexus Technologies</title>
+  <meta name="description" content="Terms of Service for Bharti Nexus Technologies. Read our terms and conditions governing the use of our products and services.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #000000;
+      color: #FFFFFF;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :root {
+      --accent: #ffffff;
+      --accent-dim: rgba(255, 255, 255, 0.08);
+      --surface-1: rgba(255,255,255,0.02);
+      --surface-2: rgba(255,255,255,0.04);
+      --surface-3: rgba(255,255,255,0.06);
+      --border-1: rgba(255,255,255,0.06);
+      --border-2: rgba(255,255,255,0.1);
+      --border-3: rgba(255,255,255,0.18);
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-tertiary: #71717a;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 56px;
+      z-index: 1000;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border-1);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.03em;
+    }
+    .nav-logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .hamburger-line {
+      width: 20px;
+      height: 1.5px;
+      background: #fff;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.98);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+    }
+
+    /* Hero Banner */
+    .page-hero {
+      padding: 160px 0 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+    }
+    .page-hero .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 20px;
+    }
+    .page-hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #d4d4d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .page-hero p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .last-updated {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin-top: 16px;
+    }
+
+    /* Content */
+    .legal-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px 120px 24px;
+    }
+    .legal-section {
+      margin-bottom: 48px;
+      padding: 32px;
+      background: var(--surface-1);
+      border: 1px solid var(--border-1);
+      border-radius: var(--radius-lg);
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+    }
+    .legal-section:hover {
+      border-color: var(--border-2);
+      background: var(--surface-2);
+    }
+    .legal-section h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--surface-3);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+    .legal-section p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section ul {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.8;
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .legal-section ul li {
+      margin-bottom: 8px;
+    }
+    .legal-section strong {
+      color: #fff;
+    }
+
+    /* Footer */
+    #footer {
+      border-top: 1px solid var(--border-1);
+      padding: 80px 0 40px 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+      gap: 40px;
+      margin-bottom: 64px;
+    }
+    .footer-brand .logo {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: block;
+      color: #fff;
+    }
+    .footer-tagline {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 28px;
+      max-width: 280px;
+      line-height: 1.7;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: var(--surface-1);
+      padding: 6px 14px;
+      border-radius: 980px;
+      border: 1px solid var(--border-1);
+      font-weight: 500;
+    }
+    .status-dot {
+      width: 7px; height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+    }
+    .footer-col-title {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color var(--transition-fast);
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid var(--border-1);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-tertiary);
+      font-size: 12px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom-links a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+      font-size: 12px;
+    }
+    .footer-bottom-links a:hover { color: var(--text-secondary); }
+    .made-in {
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 48px 40px; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-bottom-links { justify-content: center; flex-wrap: wrap; }
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .fade-in-delay-1 { animation-delay: 0.1s; }
+    .fade-in-delay-2 { animation-delay: 0.2s; }
+    .fade-in-delay-3 { animation-delay: 0.3s; }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.png" alt="Bharti Nexus Logo" class="nav-logo">
+        Bharti Nexus
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#capabilities">Solutions</a>
+        <a href="index.html#careers">Careers</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-btn">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#products" class="mobile-link">Products</a>
+    <a href="index.html#capabilities" class="mobile-link">Solutions</a>
+    <a href="index.html#careers" class="mobile-link">Careers</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow fade-in">Legal</p>
+      <h1 class="fade-in fade-in-delay-1">Terms of Service</h1>
+      <p class="fade-in fade-in-delay-2">Please read these terms carefully before using our products and services. By accessing our platform, you agree to be bound by these terms.</p>
+      <p class="last-updated fade-in fade-in-delay-3">Last Updated: June 13, 2025</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <div class="legal-content">
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">1</span> Acceptance of Terms</h2>
+      <p>By accessing or using any website, product, or service provided by Bharti Nexus Technologies ("Company", "we", "our"), you ("User", "you") agree to be bound by these Terms of Service. If you do not agree to these terms, you must not use our services.</p>
+      <p>These terms apply to all visitors, users, clients, and others who access or use our services, including but not limited to our website, AI platforms, cloud services, and enterprise solutions.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">2</span> Description of Services</h2>
+      <p>Bharti Nexus Technologies provides a range of technology services including but not limited to:</p>
+      <ul>
+        <li>Custom software development and web/mobile application development</li>
+        <li>Artificial Intelligence and Machine Learning solutions</li>
+        <li>Cloud infrastructure and deployment services</li>
+        <li>Enterprise resource planning (ERP) and CRM systems</li>
+        <li>UI/UX design and digital strategy consulting</li>
+        <li>Cybersecurity and data intelligence solutions</li>
+      </ul>
+      <p>We reserve the right to modify, suspend, or discontinue any part of our services at any time without prior notice.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">3</span> User Obligations</h2>
+      <p>By using our services, you agree to:</p>
+      <ul>
+        <li>Provide accurate and complete information when required</li>
+        <li>Maintain the confidentiality of your account credentials</li>
+        <li>Use our services only for lawful purposes and in compliance with applicable laws</li>
+        <li>Not attempt to reverse-engineer, decompile, or disassemble any of our software</li>
+        <li>Not interfere with or disrupt the integrity or performance of our services</li>
+        <li>Not use our services to transmit malicious code, spam, or unauthorized content</li>
+        <li>Comply with all applicable local, state, national, and international laws and regulations</li>
+      </ul>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">4</span> Intellectual Property</h2>
+      <p>All content, materials, software, trademarks, logos, and intellectual property displayed on our website and within our products are the exclusive property of Bharti Nexus Technologies or its licensors.</p>
+      <p>You may not reproduce, distribute, modify, create derivative works from, publicly display, or exploit any of our intellectual property without prior written consent.</p>
+      <p><strong>Client Work:</strong> For custom development projects, ownership of deliverables will be transferred to the client upon full payment as specified in the project agreement. We retain the right to use non-confidential aspects of the work in our portfolio unless otherwise agreed.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">5</span> Payment Terms</h2>
+      <p>For paid services, the following terms apply:</p>
+      <ul>
+        <li><strong>Invoicing:</strong> Invoices will be issued as per the agreed payment schedule in the project contract.</li>
+        <li><strong>Payment Methods:</strong> We accept bank transfers, UPI, and other agreed payment methods.</li>
+        <li><strong>Late Payments:</strong> Overdue invoices may incur a late fee of 2% per month on the outstanding amount.</li>
+        <li><strong>Taxes:</strong> All prices are exclusive of applicable taxes (GST) unless otherwise stated.</li>
+        <li><strong>Refunds:</strong> Refund policies will be governed by the specific terms in individual project agreements.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">6</span> Project Delivery & Timelines</h2>
+      <p>Project timelines are estimates based on the agreed scope of work. While we strive to deliver on time, delays may occur due to:</p>
+      <ul>
+        <li>Changes in project scope or requirements</li>
+        <li>Delayed feedback or approvals from the client</li>
+        <li>Unforeseen technical challenges</li>
+        <li>Force majeure events beyond our control</li>
+      </ul>
+      <p>We will communicate any anticipated delays promptly and work to minimize their impact on the project.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">7</span> Confidentiality</h2>
+      <p>Both parties agree to maintain the confidentiality of any proprietary or sensitive information shared during the course of business. This includes but is not limited to:</p>
+      <ul>
+        <li>Business strategies and plans</li>
+        <li>Technical specifications and source code</li>
+        <li>Customer data and user information</li>
+        <li>Financial information and pricing structures</li>
+      </ul>
+      <p>Confidentiality obligations survive the termination of the business relationship for a period of 3 years.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">8</span> Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, Bharti Nexus Technologies shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities.</p>
+      <p>Our total liability for any claim arising out of or relating to these terms or our services shall not exceed the total fees paid by you to us in the 12 months preceding the claim.</p>
+      <p>This limitation of liability applies regardless of the legal theory on which the claim is based, including negligence, breach of contract, or strict liability.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">9</span> Warranty Disclaimer</h2>
+      <p>Our services are provided on an "as-is" and "as-available" basis without warranties of any kind, whether express or implied. We disclaim all warranties including, but not limited to:</p>
+      <ul>
+        <li>Merchantability and fitness for a particular purpose</li>
+        <li>Non-infringement of third-party rights</li>
+        <li>Uninterrupted, error-free, or secure service operation</li>
+        <li>Accuracy or reliability of any content or information</li>
+      </ul>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">10</span> Termination</h2>
+      <p>Either party may terminate the service agreement by providing written notice as specified in the project contract. Upon termination:</p>
+      <ul>
+        <li>All outstanding payments become immediately due</li>
+        <li>Client will receive all completed deliverables up to the termination date</li>
+        <li>Both parties must return or destroy any confidential materials</li>
+        <li>Provisions relating to confidentiality, liability, and intellectual property survive termination</li>
+      </ul>
+      <p>We reserve the right to suspend or terminate your access to our services immediately if you violate these terms.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">11</span> Governing Law & Disputes</h2>
+      <p>These Terms of Service shall be governed by and construed in accordance with the laws of India. Any disputes arising out of or in connection with these terms shall be subject to the exclusive jurisdiction of the courts in Pune, Maharashtra, India.</p>
+      <p>Before initiating legal proceedings, both parties agree to attempt to resolve disputes through good-faith negotiation and, if necessary, mediation.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">12</span> Modifications to Terms</h2>
+      <p>We reserve the right to modify these Terms of Service at any time. Changes will be effective upon posting to our website with an updated "Last Updated" date. Your continued use of our services following any changes constitutes acceptance of the new terms.</p>
+      <p>For significant changes, we will make reasonable efforts to notify users through our website or email communications.</p>
+    </div>
+
+    <div class="legal-section fade-in">
+      <h2><span class="section-number">13</span> Contact Information</h2>
+      <p>For questions, concerns, or requests regarding these Terms of Service, please contact us:</p>
+      <ul>
+        <li><strong>Email:</strong> info@bhartinexus.in</li>
+        <li><strong>Phone:</strong> +91 9511798326 / +91 9764685049</li>
+        <li><strong>Address:</strong> Pune, Maharashtra, India</li>
+        <li><strong>WhatsApp:</strong> +91 9511798326</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo">Bharti Nexus</span>
+          <p class="footer-tagline">Building next-generation AI systems and digital platforms.</p>
+          <div class="status-badge">
+            <div class="status-dot"></div>
+            All Systems Operational
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Products</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#products">Bharti AI</a></li>
+            <li><a href="index.html#products">Nexus Cloud</a></li>
+            <li><a href="index.html#products">Nexus CRM</a></li>
+            <li><a href="index.html#products">Bharti HRMS</a></li>
+            <li><a href="index.html#products">Nexus Analytics</a></li>
+            <li><a href="index.html#products">Nexus Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#capabilities">For Enterprise</a></li>
+            <li><a href="index.html#capabilities">For Startups</a></li>
+            <li><a href="index.html#capabilities">For Government</a></li>
+            <li><a href="index.html#capabilities">For Healthcare</a></li>
+            <li><a href="index.html#capabilities">For Finance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#careers">Careers</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 Bharti Nexus Technologies. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="made-in">DESIGNED & BUILT WITH ♥ IN PUNE, INDIA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobile-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => { mobileMenu.classList.remove('open'); });
+    });
+
+    // Scroll-triggered fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.legal-section').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
