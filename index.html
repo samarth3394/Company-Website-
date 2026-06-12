@@ -626,6 +626,7 @@
       width: 6px; height: 6px;
       border-radius: 50%;
       background: #555;
+      animation: pulseDot 2s infinite;
     }
     .product-right {
       display: flex;
@@ -643,6 +644,36 @@
       .product-row { grid-template-columns: 1fr; padding: 36px 24px; gap: 16px; }
       .product-name { font-size: 24px; }
       .product-right p { text-align: left; max-width: 100%; font-size: 14px; }
+    }
+
+    @keyframes pulseDot {
+      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+      70% { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+    }
+    @keyframes floatOrb {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-40px) scale(1.05); }
+    }
+    .floating-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      animation: floatOrb 8s infinite ease-in-out alternate;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+    .orb-1 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(138,43,226,0.3) 0%, transparent 70%);
+      top: -50px; left: -50px;
+    }
+    .orb-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(0,255,255,0.2) 0%, transparent 70%);
+      bottom: -100px; right: -50px;
+      animation-duration: 12s;
     }
 
     /* =============================================
@@ -676,6 +707,7 @@
       border-radius: 50%;
       background: var(--text-tertiary);
       transition: all var(--transition-fast);
+      animation: pulseDot 2s infinite;
     }
     .cap-pill:hover {
       background: var(--surface-2);
@@ -1311,8 +1343,9 @@
   </section>
 
   <!-- Domains -->
-  <section id="domains">
-    <div class="container">
+  <section id="domains" style="position: relative; overflow: hidden;">
+    <div class="floating-orb orb-1" style="width: 250px; height: 250px; top: -50px; right: 10%; left: auto;"></div>
+    <div class="container" style="position: relative; z-index: 1;">
       <div class="eyebrow reveal">What We Do</div>
       <h2 class="section-headline reveal">Powering Innovation Across Domains</h2>
       <div class="domains-wrapper reveal">
@@ -1327,8 +1360,10 @@
   </section>
 
   <!-- Product Ecosystem -->
-  <section id="products">
-    <div class="container">
+  <section id="products" style="position: relative; overflow: hidden;">
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="container" style="position: relative; z-index: 1;">
       <div class="eyebrow reveal">Product Ecosystem</div>
       <h2 class="section-headline reveal">Everything Your Business Needs to Scale</h2>
       <p class="section-subtext reveal">A unified suite of AI-powered products engineered for the next generation of enterprise operations.</p>
@@ -1389,8 +1424,9 @@
   </section>
 
   <!-- Core Capabilities -->
-  <section id="capabilities">
-    <div class="container">
+  <section id="capabilities" style="position: relative; overflow: hidden;">
+    <div class="floating-orb orb-2" style="top: 0; right: -50px; left: auto; bottom: auto; background: radial-gradient(circle, rgba(138,43,226,0.2) 0%, transparent 70%);"></div>
+    <div class="container" style="position: relative; z-index: 1;">
       <div class="eyebrow reveal">Core Capabilities</div>
       <h2 class="section-headline reveal">Technologies That Define the Future</h2>
       <p class="section-subtext reveal">Deep expertise across the full spectrum of modern technology.</p>
