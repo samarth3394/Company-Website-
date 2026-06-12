@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Bharti Nexus Technologies</title>
+  <meta name="description" content="Learn more about Bharti Nexus Technologies, our mission, principles, and the leadership team driving innovation.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #000000;
+      color: #FFFFFF;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :root {
+      --accent: #ffffff;
+      --accent-dim: rgba(255, 255, 255, 0.08);
+      --surface-1: rgba(255,255,255,0.02);
+      --surface-2: rgba(255,255,255,0.04);
+      --surface-3: rgba(255,255,255,0.06);
+      --border-1: rgba(255,255,255,0.06);
+      --border-2: rgba(255,255,255,0.1);
+      --border-3: rgba(255,255,255,0.18);
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-tertiary: #71717a;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navbar */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 56px;
+      z-index: 1000;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border-1);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.03em;
+    }
+    .nav-logo {
+      height: 32px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .hamburger-line {
+      width: 20px;
+      height: 1.5px;
+      background: #fff;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.98);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .mobile-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+    }
+
+    /* Hero Banner */
+    .page-hero {
+      padding: 160px 0 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+    }
+    .page-hero .eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 20px;
+    }
+    .page-hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #d4d4d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .page-hero p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Content sections */
+    section {
+      padding: 80px 0;
+    }
+    .section-headline {
+      font-size: clamp(32px, 4vw, 48px);
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .section-subtext {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 17px;
+      max-width: 600px;
+      margin: 0 auto 64px auto;
+      line-height: 1.6;
+    }
+    .eyebrow {
+      display: block;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+    }
+
+    /* About Stats */
+    .about-stats {
+      display: flex;
+      justify-content: center;
+      gap: 56px;
+      margin-bottom: 64px;
+      flex-wrap: wrap;
+    }
+    .about-stat { text-align: center; }
+    .about-stat-num {
+      font-size: 44px;
+      font-weight: 700;
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+    }
+    .about-stat-label {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 8px;
+    }
+
+    /* Principles */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 56px;
+      max-width: 900px;
+      margin: 0 auto 100px auto;
+    }
+    .principle-item {
+      padding: 24px 16px;
+      border-left: 1px solid var(--border-1);
+      transition: border-color var(--transition-fast), transform var(--transition-fast);
+    }
+    .principle-item:hover {
+      border-left-color: var(--accent);
+      transform: translateX(4px);
+    }
+    .principle-title {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+    .principle-desc {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Leadership */
+    .leaders-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .leader-card {
+      padding: 32px 16px;
+      text-align: center;
+      transition: all var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .leader-card:hover {
+      transform: translateY(-4px);
+    }
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--surface-3);
+      border: 2px solid var(--border-2);
+      margin: 0 auto 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .leader-name {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .leader-title {
+      color: var(--text-secondary);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+    .leader-badge {
+      display: inline-block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.05);
+      padding: 4px 14px;
+      border-radius: 980px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .leader-quote {
+      font-style: italic;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+    .linkedin-icon {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .linkedin-icon:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .principles-grid { grid-template-columns: 1fr; }
+      .about-stats { gap: 32px; }
+      .leaders-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Footer */
+    #footer {
+      border-top: 1px solid var(--border-1);
+      padding: 80px 0 40px 0;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+      gap: 40px;
+      margin-bottom: 64px;
+    }
+    .footer-brand .logo {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: block;
+      color: #fff;
+    }
+    .footer-tagline {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 28px;
+      max-width: 280px;
+      line-height: 1.7;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: var(--surface-1);
+      padding: 6px 14px;
+      border-radius: 980px;
+      border: 1px solid var(--border-1);
+      font-weight: 500;
+    }
+    .status-dot {
+      width: 7px; height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+    }
+    .footer-col-title {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color var(--transition-fast);
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid var(--border-1);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--text-tertiary);
+      font-size: 12px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-bottom-links a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+      font-size: 12px;
+    }
+    .footer-bottom-links a:hover { color: var(--text-secondary); }
+    .made-in {
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .fade-in-delay-1 { animation-delay: 0.1s; }
+    .fade-in-delay-2 { animation-delay: 0.2s; }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="logo.png" alt="Bharti Nexus Logo" class="nav-logo">
+        Bharti Nexus
+      </a>
+      <div class="nav-links">
+        <a href="about.html">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#capabilities">Solutions</a>
+        <a href="index.html#careers">Careers</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobile-btn">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="about.html" class="mobile-link">About</a>
+    <a href="index.html#products" class="mobile-link">Products</a>
+    <a href="index.html#capabilities" class="mobile-link">Solutions</a>
+    <a href="index.html#careers" class="mobile-link">Careers</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow fade-in">Our Story</p>
+      <h1 class="fade-in fade-in-delay-1">Building the Intelligence Layer</h1>
+      <p class="fade-in fade-in-delay-2">Bharti Nexus Technologies was founded with a singular vision: to democratize enterprise AI and make intelligent automation accessible to every business.</p>
+    </div>
+  </section>
+
+  <!-- Principles & Stats -->
+  <section>
+    <div class="container fade-in">
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="about-stat-num">50+</div>
+          <div class="about-stat-label">Projects Delivered</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">50+</div>
+          <div class="about-stat-label">Happy Clients</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">15+</div>
+          <div class="about-stat-label">Solutions Built</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">60+</div>
+          <div class="about-stat-label">Core Technologies</div>
+        </div>
+      </div>
+
+      <div class="eyebrow">Our Principles</div>
+      <h2 class="section-headline" style="margin-bottom: 48px;">How We Operate</h2>
+
+      <div class="principles-grid">
+        <div class="principle-item">
+          <h4 class="principle-title">1. AI-First Philosophy</h4>
+          <p class="principle-desc">Every product is engineered with AI at its core, not as an afterthought.</p>
+        </div>
+        <div class="principle-item">
+          <h4 class="principle-title">2. Responsible Innovation</h4>
+          <p class="principle-desc">Explainable, fair, and auditable AI with ethics and human oversight built in.</p>
+        </div>
+        <div class="principle-item">
+          <h4 class="principle-title">3. India to the World</h4>
+          <p class="principle-desc">Born in Bharat, built for the globe. The next chapter of India's technology leadership.</p>
+        </div>
+        <div class="principle-item">
+          <h4 class="principle-title">4. Startup Velocity</h4>
+          <p class="principle-desc">Move fast, ship continuously, and iterate relentlessly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section style="border-top: 1px solid var(--border-1);">
+    <div class="container fade-in">
+      <div class="eyebrow">Leadership</div>
+      <h2 class="section-headline">Meet Our Team</h2>
+      <p class="section-subtext">The visionaries driving innovation at the intersection of AI and enterprise.</p>
+      
+      <div class="leaders-grid">
+        <div class="leader-card">
+          <div class="avatar">SC</div>
+          <h3 class="leader-name">Samarth Choudhar</h3>
+          <p class="leader-title">Founder & COO</p>
+          <div class="leader-badge">★ Founder</div>
+          <p class="leader-quote">"Technology should empower every individual and business to achieve what was once thought impossible."</p>
+          <a href="https://www.linkedin.com/in/samarth-choudhar-516b692b3" target="_blank" class="linkedin-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+        <div class="leader-card">
+          <div class="avatar">GJ</div>
+          <h3 class="leader-name">Ganesh Jawale</h3>
+          <p class="leader-title">Co-Founder & CEO</p>
+          <div class="leader-badge">★ Co-Founder</div>
+          <p class="leader-quote">"Together, we're shaping a new era of technology — intelligent, inclusive, and built to last."</p>
+          <a href="https://www.linkedin.com/in/ganesh-jawale-aa319432a" target="_blank" class="linkedin-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+        <div class="leader-card">
+          <div class="avatar">RM</div>
+          <h3 class="leader-name">Rohan Malgunde</h3>
+          <p class="leader-title">Co-Founder & Director</p>
+          <div class="leader-badge">★ Co-Founder</div>
+          <p class="leader-quote">"Our vision is to break boundaries and build intelligent solutions that drive unparalleled growth."</p>
+          <a href="https://www.linkedin.com/in/rohan-malgunde-6b08a5316" target="_blank" class="linkedin-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo">Bharti Nexus</span>
+          <p class="footer-tagline">Building next-generation AI systems and digital platforms.</p>
+          <div class="status-badge">
+            <div class="status-dot"></div>
+            All Systems Operational
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Products</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#products">Bharti Voice Cleaner</a></li>
+            <li><a href="index.html#products">Bharti AI</a></li>
+            <li><a href="index.html#products">Nexus Analytics</a></li>
+            <li><a href="index.html#products">Nexus Security</a></li>
+            <li><a href="index.html#products">Bharti Voice AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Solutions</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#capabilities">For Enterprise</a></li>
+            <li><a href="index.html#capabilities">For Startups</a></li>
+            <li><a href="index.html#capabilities">For Government</a></li>
+            <li><a href="index.html#capabilities">For Healthcare</a></li>
+            <li><a href="index.html#capabilities">For Finance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#careers">Careers</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2025 Bharti Nexus Technologies. All rights reserved.</div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="made-in">DESIGNED & BUILT WITH ♥ IN PUNE, INDIA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobile-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => { mobileMenu.classList.remove('open'); });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in, .principle-item, .leader-card').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
