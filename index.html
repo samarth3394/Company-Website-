@@ -1783,6 +1783,21 @@
       window.open(url, '_blank');
     }
 
+    // =============================================
+    // 7. FORCE VIDEO PLAY (Bypass Auto-pause)
+    // =============================================
+    document.addEventListener("DOMContentLoaded", () => {
+      const heroVideo = document.querySelector('.hero-video');
+      if (heroVideo) {
+        heroVideo.play().catch(() => {});
+        setInterval(() => {
+          if (heroVideo.paused) {
+            heroVideo.play().catch(() => {});
+          }
+        }, 1000);
+      }
+    });
+
   </script>
 </body>
 </html>
