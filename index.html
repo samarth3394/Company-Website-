@@ -533,7 +533,7 @@
       color: var(--text-secondary);
       transition: all var(--transition-fast);
       cursor: default;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
     }
@@ -542,6 +542,20 @@
       border-color: var(--border-2);
       color: #fff;
       transform: translateY(-2px);
+    }
+    .domain-pill:hover .cap-dot {
+      background: #fff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    @media (max-width: 600px) {
+      .domains-wrapper {
+        gap: 6px;
+      }
+      .domain-pill {
+        font-size: 12px;
+        padding: 6px 12px;
+        gap: 6px;
+      }
     }
 
     /* =============================================
@@ -1302,12 +1316,12 @@
       <div class="eyebrow reveal">What We Do</div>
       <h2 class="section-headline reveal">Powering Innovation Across Domains</h2>
       <div class="domains-wrapper reveal">
-        <div class="domain-pill">🤖 Artificial Intelligence</div>
-        <div class="domain-pill">☁️ Cloud Tech</div>
-        <div class="domain-pill">📊 Data Science</div>
-        <div class="domain-pill">⚙️ Automation</div>
-        <div class="domain-pill">🏢 Enterprise</div>
-        <div class="domain-pill">🔐 Cybersecurity</div>
+        <div class="domain-pill"><span class="cap-dot"></span> Artificial Intelligence</div>
+        <div class="domain-pill"><span class="cap-dot"></span> Cloud Tech</div>
+        <div class="domain-pill"><span class="cap-dot"></span> Data Science</div>
+        <div class="domain-pill"><span class="cap-dot"></span> Automation</div>
+        <div class="domain-pill"><span class="cap-dot"></span> Enterprise</div>
+        <div class="domain-pill"><span class="cap-dot"></span> Cybersecurity</div>
       </div>
     </div>
   </section>
