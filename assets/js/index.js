@@ -186,26 +186,26 @@
       });
     });
     // =============================================
-    // 6. CONTACT FORM → WHATSAPP
+    // 6. CONTACT FORM → EMAIL
     // =============================================
-    function sendToWhatsApp() {
+    function sendEmail() {
       const fname = document.getElementById('cf-fname').value.trim();
       const lname = document.getElementById('cf-lname').value.trim();
-      const email = document.getElementById('cf-email').value.trim();
       const company = document.getElementById('cf-company').value.trim();
       const interest = document.getElementById('cf-interest').value;
       const message = document.getElementById('cf-message').value.trim();
 
       let text = `Hello Bharti Nexus Technologies,\n\n`;
       if (fname || lname) text += `Name: ${fname} ${lname}\n`;
-      if (email) text += `Email: ${email}\n`;
       if (company) text += `Company: ${company}\n`;
       if (interest) text += `Interested in: ${interest}\n`;
       if (message) text += `\nMessage:\n${message}\n`;
       text += `\nThank you!`;
 
-      const url = `https://wa.me/919511798326?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
+      const subject = encodeURIComponent(`Inquiry from ${fname} ${lname}`);
+      const body = encodeURIComponent(text);
+      const url = `mailto:info@bhartinexus.in?subject=${subject}&body=${body}`;
+      window.location.href = url;
     }
 
     // =============================================
