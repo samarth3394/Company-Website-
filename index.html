@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   
-  <link rel="stylesheet" href="assets/css/index.css?v=6">
+  <link rel="stylesheet" href="assets/css/index.css?v=7">
 </head>
 <body>
 
@@ -379,18 +379,32 @@
   
   <script src="assets/js/index.js"></script>
   <script>
-    // Mobile Leadership Scroll Animation & Progress
+    // Section Snap Scroll Animations
     document.addEventListener("DOMContentLoaded", () => {
+      const sections = document.querySelectorAll('section');
+      
+      const snapObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('snap-visible');
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+
+      sections.forEach(s => snapObserver.observe(s));
+
+      // Mobile Leadership Scroll Animation & Progress
       const cards = document.querySelectorAll('#leaders-container .leader-card');
       const progressCurrent = document.querySelector('.mobile-leadership-progress .current');
       
       if (!cards.length || !progressCurrent) return;
 
-      const observer = new IntersectionObserver((entries) => {
+      const leaderObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('mobile-active');
-            // Update progress indicator based on card index
             const index = Array.from(cards).indexOf(entry.target) + 1;
             progressCurrent.textContent = index.toString().padStart(2, '0');
           } else {
@@ -399,10 +413,10 @@
         });
       }, {
         root: document.getElementById('leaders-container'),
-        threshold: 0.6 // Trigger when card is 60% visible
+        threshold: 0.6
       });
 
-      cards.forEach(card => observer.observe(card));
+      cards.forEach(card => leaderObserver.observe(card));
     });
   </script>
 </body>

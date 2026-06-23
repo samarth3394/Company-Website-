@@ -1,5 +1,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { 
+      scroll-behavior: smooth; 
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
     body {
       background-color: #000000;
       color: #FFFFFF;
@@ -43,9 +47,91 @@
     section {
       padding: 40px 0;
       position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
     }
     @media (max-width: 768px) {
       section { padding: 30px 0; }
+    }
+
+    /* Section scroll-triggered animations */
+    @keyframes snapFadeZoom {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes snapSlideLeft {
+      from { opacity: 0; transform: translateX(-60px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes snapSlideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes snapStagger {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    section .container {
+      opacity: 0;
+      transition: opacity 0.1s;
+    }
+    section.snap-visible .container {
+      opacity: 1;
+    }
+
+    /* Hero: fade + zoom */
+    #hero.snap-visible .hero-content {
+      animation: snapFadeZoom 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* About: slide from left */
+    #about.snap-visible .container {
+      animation: snapSlideLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Products: stagger cards */
+    #products.snap-visible .product-row {
+      animation: snapStagger 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    #products.snap-visible .product-row:nth-child(2) { animation-delay: 0.1s; }
+    #products.snap-visible .product-row:nth-child(3) { animation-delay: 0.2s; }
+    #products.snap-visible .product-row:nth-child(4) { animation-delay: 0.3s; }
+    #products.snap-visible .product-row:nth-child(5) { animation-delay: 0.4s; }
+
+    /* Domains: slide up */
+    #domains.snap-visible .container {
+      animation: snapSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Leadership: scale up */
+    #leadership.snap-visible .container {
+      animation: snapFadeZoom 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Contact: fade up */
+    #contact.snap-visible .container {
+      animation: snapSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Careers: fade up */
+    #careers.snap-visible .container {
+      animation: snapSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Stats: fade zoom */
+    #stats.snap-visible .container {
+      animation: snapFadeZoom 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Footer should not snap */
+    footer, #footer {
+      scroll-snap-align: none;
+      min-height: auto;
     }
 
     
