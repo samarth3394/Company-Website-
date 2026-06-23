@@ -981,18 +981,17 @@
     @media (max-width: 768px) {
       .leaders-grid, .leaders-carousel { 
         display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-        overflow-x: hidden;
-        scroll-snap-type: y mandatory;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-        gap: 24px;
-        padding-bottom: 30vh;
+        gap: 16px;
+        padding-bottom: 16px;
         margin: 0 -24px; 
         padding-left: 24px; 
         padding-right: 24px;
-        height: 75vh;
         scrollbar-width: none;
         position: relative;
       }
@@ -1000,18 +999,17 @@
         display: none;
       }
       .leaders-grid .leader-card, .leaders-carousel .leader-card { 
-        flex: 0 0 auto;
-        min-height: 60vh;
-        width: 100%;
-        scroll-snap-align: start;
-        transform-origin: center bottom;
-        opacity: 0.4;
-        transform: scale(0.95) translateY(15px);
+        flex: 0 0 85%;
+        width: 85%;
+        scroll-snap-align: center;
+        transform-origin: center center;
+        opacity: 0.5;
+        transform: scale(0.92);
         transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .leaders-grid .leader-card.mobile-active, .leaders-carousel .leader-card.mobile-active {
         opacity: 1;
-        transform: scale(1) translateY(0);
+        transform: scale(1);
       }
       
       .mobile-leadership-progress {
