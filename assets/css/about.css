@@ -264,70 +264,98 @@
       gap: 24px;
     }
     .leader-card {
-      padding: 40px 24px;
-      text-align: center;
-      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(20, 20, 25, 0.4);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      height: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
     .leader-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-12px);
+      border-color: rgba(64, 153, 255, 0.6);
+      box-shadow: 0 20px 50px rgba(64, 153, 255, 0.2), 0 0 20px rgba(64, 153, 255, 0.1) inset;
     }
-    .avatar {
-      width: 200px;
-      height: 200px;
-      border-radius: var(--radius-lg);
-      background: var(--surface-3);
-      border: 2px solid var(--border-2);
-      margin: 0 auto 20px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      font-weight: 700;
-      color: #fff;
+    .leader-img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
       object-position: top;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .leader-card:hover .leader-img {
+      transform: scale(1.05);
+    }
+    .leader-info-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 40px 24px 24px;
+      background: linear-gradient(to top, rgba(10,10,15,0.95) 0%, rgba(10,10,15,0.8) 40%, transparent 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      text-align: left;
+      z-index: 2;
     }
     .leader-name {
       color: #fff;
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 22px;
+      font-weight: 700;
       margin-bottom: 4px;
+      letter-spacing: -0.02em;
     }
     .leader-title {
-      color: var(--text-secondary);
-      font-size: 13px;
-      margin-bottom: 12px;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .leader-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .leader-badge {
       display: inline-block;
-      font-size: 10px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.6);
-      background: rgba(255,255,255,0.05);
-      padding: 4px 14px;
-      border-radius: 980px;
-      margin-bottom: 20px;
+      color: #4099ff;
+      background: rgba(64, 153, 255, 0.1);
+      padding: 6px 14px;
+      border-radius: 8px;
       font-weight: 600;
-    }
-    .leader-quote {
-      font-style: italic;
-      color: var(--text-tertiary);
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 24px;
-      flex-grow: 1;
+      border: 1px solid rgba(64, 153, 255, 0.2);
+      box-shadow: 0 0 10px rgba(64,153,255,0.1);
     }
     .linkedin-icon {
-      color: var(--text-tertiary);
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
-      transition: color var(--transition-fast);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(4px);
     }
-    .linkedin-icon:hover { color: #fff; }
+    .linkedin-icon:hover { 
+      color: #fff; 
+      background: rgba(64, 153, 255, 0.2);
+      border-color: rgba(64, 153, 255, 0.5);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 5px 15px rgba(64,153,255,0.2);
+    }
 
     @media (max-width: 1024px) {
       .principles-grid { grid-template-columns: repeat(2, 1fr); }
