@@ -938,6 +938,35 @@
       }
     }
 
+    .leaders-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      gap: 24px;
+      padding-bottom: 32px;
+      scrollbar-width: none;
+    }
+    .leaders-carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .leaders-carousel .leader-card {
+      flex: 0 0 320px;
+      scroll-snap-align: center;
+    }
+    @media (max-width: 768px) {
+      .leaders-carousel {
+        margin: 0 -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+        gap: 16px;
+      }
+      .leaders-carousel .leader-card {
+        flex: 0 0 85%;
+      }
+    }
+
     
     .focus-grid {
       display: grid;
