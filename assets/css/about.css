@@ -363,23 +363,55 @@
       
       .leaders-grid { 
         display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
-        gap: 16px;
-        padding-bottom: 32px;
+        gap: 24px;
+        padding-bottom: 30vh;
         margin: 0 -24px; 
         padding-left: 24px; 
         padding-right: 24px;
+        height: 75vh;
         scrollbar-width: none;
+        position: relative;
       }
       .leaders-grid::-webkit-scrollbar {
         display: none;
       }
-      .leader-card { 
-        flex: 0 0 85%;
-        scroll-snap-align: center;
+      .leaders-grid .leader-card { 
+        flex: 0 0 60vh;
+        width: 100%;
+        scroll-snap-align: start;
+        transform-origin: center bottom;
+        opacity: 0.4;
+        transform: scale(0.9) translateY(20px);
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .leaders-grid .leader-card.mobile-active {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+      
+      .mobile-leadership-progress {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 24px;
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.4);
+        letter-spacing: 0.25em;
+      }
+      .mobile-leadership-progress .current {
+        color: #fff;
+      }
+    }
+    @media (min-width: 769px) {
+      .mobile-leadership-progress {
+        display: none;
       }
     }
 

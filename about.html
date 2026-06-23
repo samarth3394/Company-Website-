@@ -57,7 +57,10 @@
   
   <section>
     <div class="container fade-in">
-      <div class="leaders-grid">
+      <div class="mobile-leadership-progress">
+        <span class="current">01</span> &nbsp;/&nbsp; <span class="total">03</span>
+      </div>
+      <div class="leaders-grid" id="leaders-container-about">
         <div class="leader-card">
           <img src="assets/images/samarth.png?v=2" alt="Samarth Choudhar" class="leader-img">
           <div class="leader-info-overlay">
@@ -154,5 +157,32 @@
 
   
   <script src="assets/js/about.js"></script>
+  <script>
+    // Mobile Leadership Scroll Animation & Progress
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll('#leaders-container-about .leader-card');
+      const progressCurrent = document.querySelector('.mobile-leadership-progress .current');
+      
+      if (!cards.length || !progressCurrent) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('mobile-active');
+            // Update progress indicator based on card index
+            const index = Array.from(cards).indexOf(entry.target) + 1;
+            progressCurrent.textContent = index.toString().padStart(2, '0');
+          } else {
+            entry.target.classList.remove('mobile-active');
+          }
+        });
+      }, {
+        root: document.getElementById('leaders-container-about'),
+        threshold: 0.6 // Trigger when card is 60% visible
+      });
+
+      cards.forEach(card => observer.observe(card));
+    });
+  </script>
 </body>
 </html>
