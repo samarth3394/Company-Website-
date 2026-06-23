@@ -382,13 +382,14 @@
         display: none;
       }
       .leaders-grid .leader-card { 
-        flex: 0 0 60vh;
+        flex: 0 0 auto;
+        min-height: 60vh;
         width: 100%;
         scroll-snap-align: start;
         transform-origin: center bottom;
         opacity: 0.4;
-        transform: scale(0.9) translateY(20px);
-        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: scale(0.95) translateY(15px);
+        transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .leaders-grid .leader-card.mobile-active {
         opacity: 1;

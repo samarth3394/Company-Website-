@@ -956,22 +956,27 @@
     @media (max-width: 1024px) {
       .leaders-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    .leaders-carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      gap: 24px;
-      padding-bottom: 32px;
-      scrollbar-width: none;
-    }
-    .leaders-carousel::-webkit-scrollbar {
-      display: none;
-    }
-    .leaders-carousel .leader-card {
-      flex: 0 0 320px;
-      scroll-snap-align: center;
+    @media (min-width: 769px) {
+      .leaders-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        gap: 24px;
+        padding-bottom: 32px;
+        scrollbar-width: none;
+      }
+      .leaders-carousel::-webkit-scrollbar {
+        display: none;
+      }
+      .leaders-carousel .leader-card {
+        flex: 0 0 320px;
+        scroll-snap-align: center;
+      }
+      .mobile-leadership-progress {
+        display: none;
+      }
     }
     @media (max-width: 768px) {
       .leaders-grid, .leaders-carousel { 
@@ -995,13 +1000,14 @@
         display: none;
       }
       .leaders-grid .leader-card, .leaders-carousel .leader-card { 
-        flex: 0 0 60vh;
+        flex: 0 0 auto;
+        min-height: 60vh;
         width: 100%;
         scroll-snap-align: start;
         transform-origin: center bottom;
         opacity: 0.4;
-        transform: scale(0.9) translateY(20px);
-        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: scale(0.95) translateY(15px);
+        transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .leaders-grid .leader-card.mobile-active, .leaders-carousel .leader-card.mobile-active {
         opacity: 1;
@@ -1020,11 +1026,6 @@
       }
       .mobile-leadership-progress .current {
         color: #fff;
-      }
-    }
-    @media (min-width: 769px) {
-      .mobile-leadership-progress {
-        display: none;
       }
     }
 
