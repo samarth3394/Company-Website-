@@ -898,7 +898,6 @@
       width: 100%;
       padding: 60px 24px 24px;
       background: linear-gradient(to top, rgba(10,10,15,0.98) 0%, rgba(10,10,15,0.8) 50%, transparent 100%);
-      border-top: 1px solid rgba(255,255,255,0.05);
       text-align: left;
       z-index: 2;
     }
