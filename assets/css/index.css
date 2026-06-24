@@ -1248,6 +1248,41 @@
       transition: all var(--transition-fast);
       width: 100%;
     }
+
+    /* Trusted By Section */
+    #trusted-by {
+      overflow: hidden;
+    }
+    .trusted-logos {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .t-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.5;
+      transition: var(--transition-fast);
+      cursor: default;
+    }
+    .t-logo:hover {
+      opacity: 1;
+      color: var(--accent);
+      text-shadow: 0 0 15px var(--accent-glow);
+    }
+    @media (max-width: 768px) {
+      .trusted-logos {
+        justify-content: center;
+        gap: 20px;
+      }
+      .t-logo { font-size: 14px; }
+    }
+
     .contact-form input::placeholder, .contact-form textarea::placeholder {
       color: var(--text-tertiary);
     }
