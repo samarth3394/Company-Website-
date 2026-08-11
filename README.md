@@ -16,7 +16,7 @@ We provide cutting-edge solutions across various domains:
 Our solutions are tailored for Enterprises, Startups, Government, Healthcare, and Finance.
 
 ## Leadership Team
-*   **Samarth Choudhar** - Founder & COO
+*   **Samarth Choudhar** - Founder & CTO
 *   **Ganesh Jawale** - Co-Founder & CEO
 *   **Rohan Malgunde** - Co-Founder & Director
 
