@@ -281,6 +281,8 @@
       object-fit: contain;
       flex-shrink: 0;
       display: block;
+      filter: invert(1);
+      mix-blend-mode: screen;
     }
     .nav-links {
       display: flex;
