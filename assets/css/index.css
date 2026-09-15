@@ -1400,3 +1400,9 @@
       .footer-bottom { flex-direction: column; text-align: center; }
       .footer-bottom-links { justify-content: center; flex-wrap: wrap; }
     }
+@media (max-width: 768px) {
+  #hero {
+    background-attachment: scroll !important;
+    background-position: center center !important;
+  }
+}
