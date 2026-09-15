@@ -1402,9 +1402,6 @@
     }
 @media (max-width: 768px) {
   #hero {
-    background-image: url('../images/hero-bg-mobile.png?v=1') !important;
-    background-attachment: scroll !important;
-    background-position: center center !important;
-    background-size: cover !important;
+    background: url('../images/hero-bg-mobile.png?v=3') center top / cover no-repeat scroll !important;
   }
 }
