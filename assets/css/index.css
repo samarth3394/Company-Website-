@@ -355,6 +355,19 @@
       position: relative;
       padding-top: 56px;
       overflow: hidden;
+      background: url('../images/hero-bg.png?v=3') center/cover no-repeat !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-attachment: fixed !important;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      z-index: 0;
     }
     .hero-glow {
       position: absolute;
