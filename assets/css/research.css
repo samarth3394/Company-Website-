@@ -241,3 +241,6 @@
   line-height: 1.6;
   margin: 0;
 }
+
+/* Override index.css snap hiding */
+section .container { opacity: 1 !important; transform: none !important; animation: none !important; }
