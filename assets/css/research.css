@@ -1,0 +1,243 @@
+/* research.css for CEREON AI */
+.research-hero {
+  position: relative;
+  padding: 180px 0 80px;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(64, 153, 255, 0.1);
+  color: #4099ff;
+  border: 1px solid rgba(64, 153, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  color: #d4d4d8;
+  margin-bottom: 30px;
+}
+
+.hero-vision {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.research-content-section {
+  padding: 60px 0;
+}
+
+.text-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.lead-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.highlight-box {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid #4099ff;
+  padding: 30px;
+  border-radius: 0 12px 12px 0;
+  margin: 40px 0;
+}
+
+.highlight-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.highlight-box p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.section-subheading {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.architecture-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border-1);
+  border-bottom: 1px solid var(--border-1);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.agent-card {
+  background: var(--surface-1);
+  border: 1px solid var(--border-2);
+  border-radius: 16px;
+  padding: 30px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.agent-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(64, 153, 255, 0.4);
+}
+
+.agent-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.agent-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.agent-desc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.scenario-section {
+  padding: 100px 0 60px;
+}
+
+.terminal-example {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  margin: 40px 0;
+}
+
+.terminal-header {
+  background: #161b22;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #30363d;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.terminal-title {
+  color: #8b949e;
+  font-family: monospace;
+  font-size: 13px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateX(-24px);
+}
+
+.terminal-body {
+  padding: 24px;
+}
+
+.user-prompt {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.user-prompt .icon {
+  font-size: 1.2rem;
+}
+
+.user-prompt .text {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ai-response {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.95rem;
+  color: #8b949e;
+  padding-left: 36px;
+}
+
+.step {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step .check {
+  color: #3fb950;
+  font-weight: bold;
+}
+
+.vision-conclusion {
+  margin-top: 60px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(64, 153, 255, 0.1) 0%, transparent 100%);
+  border: 1px solid rgba(64, 153, 255, 0.2);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.vision-conclusion p {
+  font-size: 1.35rem;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+}
