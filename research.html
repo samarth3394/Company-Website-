@@ -113,6 +113,21 @@
       <p class="eyebrow">Research & Development</p>
       <h1>AI as the New Operating System</h1>
       <p class="subline fade-in-delay-1">We are actively researching the groundbreaking concept of an AI Integrated OS. Moving beyond application-centric environments to natively intelligent, intent-driven desktop experiences.</p>
+      
+      <!-- Interactive Terminal UI -->
+      <div class="terminal-container fade-in-delay-2" id="interactive-terminal">
+        <div class="terminal-header">
+          <div class="terminal-dot" style="background: #ff5f56;"></div>
+          <div class="terminal-dot" style="background: #ffbd2e;"></div>
+          <div class="terminal-dot" style="background: #27c93f;"></div>
+          <div class="terminal-title">nexus-ai-core ~ intent-engine</div>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <p class="term-line"><span class="prompt">user@nexus:~$</span> <span>Initialize AI OS environment...</span></p>
+          <p class="term-line success">[OK] Kernel intelligence layer active.</p>
+          <p class="term-line"><span class="prompt">nexus-ai></span> <span class="typing-text">Awaiting user intent...</span><span class="cursor">_</span></p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -218,6 +233,55 @@
 
   
   <script src="assets/js/about.js"></script>
+  <script>
+    // Interactive Terminal Script
+    const terminalBody = document.getElementById('terminal-body');
+    const scenarios = [
+      { intent: "Organize my messy desktop based on project names.", response: "[Task] Categorizing 142 files...\n[Success] Created 4 project folders and moved files." },
+      { intent: "Find the invoice from last Tuesday and email it to Finance.", response: "[Task] Searching local & cloud storage for 'invoice' near last Tuesday...\n[Found] invoice_1029.pdf\n[Action] Drafted email to finance@bhartinexus.in. Sending..." },
+      { intent: "Set up my development environment for a React app.", response: "[Task] Allocating resources...\n[Action] Starting Docker containers...\n[Action] Opening VS Code and localhost:3000.\n[Success] Environment ready." }
+    ];
+    
+    let currentScenario = 0;
+    
+    function runTerminalSimulation() {
+      if(currentScenario >= scenarios.length) currentScenario = 0;
+      const scenario = scenarios[currentScenario];
+      
+      // Clear terminal
+      terminalBody.innerHTML = '<p class="term-line"><span class="prompt">nexus-ai></span> <span class="typing-text" id="typewriter"></span><span class="cursor">_</span></p>';
+      const typewriter = document.getElementById('typewriter');
+      
+      let i = 0;
+      const intentText = scenario.intent;
+      
+      // Type out intent
+      const typingInterval = setInterval(() => {
+        typewriter.textContent += intentText.charAt(i);
+        i++;
+        if (i >= intentText.length) {
+          clearInterval(typingInterval);
+          setTimeout(() => {
+            // Show response
+            const responseLines = scenario.response.split('\n');
+            let responseHtml = '';
+            responseLines.forEach(line => {
+              const colorClass = line.includes('[Success]') || line.includes('[Found]') ? 'success' : 'info';
+              responseHtml += `<p class="term-line ${colorClass}">${line}</p>`;
+            });
+            responseHtml += `<p class="term-line"><span class="prompt">nexus-ai></span> <span class="typing-text">Awaiting user intent...</span><span class="cursor">_</span></p>`;
+            
+            terminalBody.innerHTML = `<p class="term-line"><span class="prompt">nexus-ai></span> <span>${intentText}</span></p>` + responseHtml;
+            
+            currentScenario++;
+            setTimeout(runTerminalSimulation, 5000);
+          }, 1000);
+        }
+      }, 50);
+    }
 
+    // Start simulation after 2 seconds
+    setTimeout(runTerminalSimulation, 2000);
+  </script>
 </body>
 </html>
